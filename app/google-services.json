@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "138267562023",
+    "firebase_url": "https://dupree-app-bolivia.firebaseio.com",
+    "project_id": "dupree-app-bolivia",
+    "storage_bucket": "dupree-app-bolivia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138267562023:android:a80f6bddc452a19c",
+        "android_client_info": {
+          "package_name": "com.dupreincabolivia.dupree"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "138267562023-ptrdrjhgtl5b7lujga8khubncfo2rjne.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0AhsxJUJwyZcOjCgOsx0ulfz-0Box9Y8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
