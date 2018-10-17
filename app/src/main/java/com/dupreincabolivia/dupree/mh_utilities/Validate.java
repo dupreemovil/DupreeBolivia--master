@@ -24,7 +24,7 @@ public class Validate {
 
     public boolean isValidPwd(String pwd) {
         Matcher matcher;
-        final Pattern USER_NAME_PATTERN = Pattern.compile("^[a-zA-Z0-9@.#$%^&*_&?$()\\\\]+$");
+        final Pattern USER_NAME_PATTERN = Pattern.compile("^[a-zA-Z0-9@.#$%^&*_&?$()-\\\\]+$");
 
         matcher = USER_NAME_PATTERN.matcher(pwd);
 
