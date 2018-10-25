@@ -261,7 +261,7 @@
 
     <string name="pick_image_intent_text">pick_image_intent_text</string>
     <string name="eliminar">Eliminar</string>
-    <string name="aniadir">Añadir</string>
+    <string name="aniadir">Agregado</string>
     <string name="editar">Editado</string>
     <string name="pedido_no_puede_modificarse">Este pedido no puede ser modificado</string>
     <string name="aprobar">APROBAR</string>
