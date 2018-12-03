@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Azzorti</string>
+    <string name="app_name">Azzorti Bolivia</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -7,7 +7,7 @@
     <string name="servicio_al_cliente">Servicio al cliente</string>
     <string name="catalogos">Catálogos</string>
     <string name="iniciar_sesion">Iniciar Sesion</string>
-    <string name="dupree_cap">Azzorti</string>
+    <string name="dupree_cap">Azzorti Bolivia</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -260,7 +260,7 @@
 
 
     <string name="pick_image_intent_text">pick_image_intent_text</string>
-    <string name="eliminar">Eliminar</string>
+    <string name="eliminar">Borrado</string>
     <string name="aniadir">Agregado</string>
     <string name="editar">Editado</string>
     <string name="pedido_no_puede_modificarse">Este pedido no puede ser modificado</string>
