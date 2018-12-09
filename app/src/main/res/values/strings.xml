@@ -19,6 +19,10 @@
     <string name="nombre_s">Nombre(s)</string>
     <string name="fecha_de_nacimiento">Fecha de nacimiento</string>
     <string name="zona_seccion">Zona sección</string>
+    <string name="direccion">Direccion</string>
+    <string name="direccion2">Direccion de reparto</string>
+    <string name="interseccion">Interseccion</string>
+
     <string name="apellido_s">Apellido(s)</string>
 
     <string name="aceptar">Aceptar</string>

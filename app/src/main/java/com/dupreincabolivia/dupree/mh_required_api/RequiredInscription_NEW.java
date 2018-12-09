@@ -15,7 +15,6 @@ public class RequiredInscription_NEW {
     private String zona_seccion;//
     private String tipo_via;//
     private String numero1;//
-    private String letra1;//
     private String bis;//
     private String numero2;//
     private String letra2;//
@@ -50,7 +49,7 @@ public class RequiredInscription_NEW {
     public RequiredInscription_NEW(String cedula, String departamento, String zona_seccion, String id_ciudad,
                             String name_ciudad, String barrio, String id_barrio, String telefono,
                             String celular, String correo, String nacimiento, String imei, String tipo_via,
-                            String numero1, String letra1, String bis, String numero2, String letra2,
+                            String numero1, String bis, String numero2, String letra2,
                             String numero3, String pcardinal, String complemento, String direccion_concatenada,
                             String direccion_envio, String id_barrio_envio) {
 
@@ -69,7 +68,6 @@ public class RequiredInscription_NEW {
         this.imei = imei;
         this.tipo_via = tipo_via;
         this.numero1 = numero1;
-        this.letra1 = letra1;
         this.bis = bis;
         this.numero2 = numero2;
         this.letra2 = letra2;
@@ -126,9 +124,7 @@ public class RequiredInscription_NEW {
         return numero1;
     }
 
-    public String getLetra1() {
-        return letra1;
-    }
+
 
     public String getBis() {
         return bis;

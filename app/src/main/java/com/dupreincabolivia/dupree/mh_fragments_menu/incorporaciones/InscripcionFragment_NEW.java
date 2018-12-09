@@ -1,7 +1,6 @@
 package com.dupreincabolivia.dupree.mh_fragments_menu.incorporaciones;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
@@ -23,9 +22,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.Settings;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
@@ -46,7 +43,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dupreincabolivia.dupree.MainActivity;
 import com.dupreincabolivia.dupree.R;
 import com.dupreincabolivia.dupree.mh_dialogs.DateDialog;
 import com.dupreincabolivia.dupree.mh_dialogs.ListCity;
@@ -56,9 +52,7 @@ import com.dupreincabolivia.dupree.mh_dialogs.MH_Dialogs_Barrio;
 import com.dupreincabolivia.dupree.mh_http.Http;
 import com.dupreincabolivia.dupree.mh_required_api.Referencia;
 import com.dupreincabolivia.dupree.mh_required_api.RequiredIdenty;
-import com.dupreincabolivia.dupree.mh_required_api.RequiredInscription;
 import com.dupreincabolivia.dupree.mh_required_api.RequiredInscription_NEW;
-import com.dupreincabolivia.dupree.mh_required_api.RequiredRegister;
 import com.dupreincabolivia.dupree.mh_required_api.RequiredValidateRef;
 import com.dupreincabolivia.dupree.mh_response_api.Barrio;
 import com.dupreincabolivia.dupree.mh_response_api.Ciudad;
@@ -173,15 +167,13 @@ public class InscripcionFragment_NEW extends Fragment {
 
 
     // --------- DE CAMBIOS SOLICITADOS
-    EditText txtDateBird, txtZone, txtSpnTypeVia,
-            txtNum1, txtSpnChar1, txtSpnBis, txtNum2, txtSpnChar2, txtNum3, txtSpnSur,
-            txtInfo, txtSpnDpto, txtSpnCity, txtSpnBarrio, txtSpnDirSend, txtPhone, txtCellphone,
+    EditText txtDateBird, txtZone, txtDireccion,
+            txtNum1,  txtNum2,
+            txtSpnDpto, txtSpnCity, txtSpnBarrio, txtSpnDirSend, txtPhone, txtCellphone,
             txtEmail;
-    TextView txtConcatenateDir, txtConcatenateDir_2;
+    TextView txtConcatenateDir;
     LinearLayout ctxDirSend;
-    EditText txtSpnTypeVia_2,
-            txtNum1_2, txtSpnChar1_2, txtSpnBis_2, txtNum2_2, txtSpnChar2_2, txtNum3_2, txtSpnSur_2,
-            txtInfo_2, txtSpnDpto_2, txtSpnCity_2, txtSpnBarrio_2;
+    EditText txtDireccion21,  txtSpnDpto_2, txtSpnCity_2, txtSpnBarrio_2;
     ImageView img_gps;
     // --------- DE CAMBIOS SOLICITADOS
 
@@ -214,25 +206,12 @@ public class InscripcionFragment_NEW extends Fragment {
 
         //Direccion residencia
         txtConcatenateDir = (TextView) v.findViewById(R.id.txtConcatenateDir);
-        txtConcatenateDir_2 = (TextView) v.findViewById(R.id.txtConcatenateDir_2);
-        txtSpnTypeVia = (EditText) v.findViewById(R.id.txtSpnTypeVia);
-        txtSpnTypeVia.addTextChangedListener(mChangeText);
+        txtDireccion = (EditText) v.findViewById(R.id.txtDireccion);
+        txtDireccion.addTextChangedListener(mChangeText);
         txtNum1 = (EditText) v.findViewById(R.id.txtNum1);
         txtNum1.addTextChangedListener(mChangeText);
-        txtSpnChar1 = (EditText) v.findViewById(R.id.txtSpnChar1);
-        txtSpnChar1.addTextChangedListener(mChangeText);
-        txtSpnBis = (EditText) v.findViewById(R.id.txtSpnBis);
-        txtSpnBis.addTextChangedListener(mChangeText);
         txtNum2 = (EditText) v.findViewById(R.id.txtNum2);
         txtNum2.addTextChangedListener(mChangeText);
-        txtSpnChar2 = (EditText) v.findViewById(R.id.txtSpnChar2);
-        txtSpnChar2.addTextChangedListener(mChangeText);
-        txtNum3 = (EditText) v.findViewById(R.id.txtNum3);
-        txtNum3.addTextChangedListener(mChangeText);
-        txtSpnSur = (EditText) v.findViewById(R.id.txtSpnSur);
-        txtSpnSur.addTextChangedListener(mChangeText);
-        txtInfo = (EditText) v.findViewById(R.id.txtInfo);
-        txtInfo.addTextChangedListener(mChangeText);
 
 
         txtSpnDpto = (EditText) v.findViewById(R.id.txtSpnDpto);
@@ -245,24 +224,8 @@ public class InscripcionFragment_NEW extends Fragment {
                 getStringArray(R.array.dirSend)).get(0));
         ctxDirSend = (LinearLayout) v.findViewById(R.id.ctxDirSend);
 
-        txtSpnTypeVia_2 = (EditText) v.findViewById(R.id.txtSpnTypeVia_2);
-        txtSpnTypeVia_2.addTextChangedListener(mChangeText_2);
-        txtNum1_2 = (EditText) v.findViewById(R.id.txtNum1_2);
-        txtNum1_2.addTextChangedListener(mChangeText_2);
-        txtSpnChar1_2 = (EditText) v.findViewById(R.id.txtSpnChar1_2);
-        txtSpnChar1_2.addTextChangedListener(mChangeText_2);
-        txtSpnBis_2 = (EditText) v.findViewById(R.id.txtSpnBis_2);
-        txtSpnBis_2.addTextChangedListener(mChangeText_2);
-        txtNum2_2 = (EditText) v.findViewById(R.id.txtNum2_2);
-        txtNum2_2.addTextChangedListener(mChangeText_2);
-        txtSpnChar2_2 = (EditText) v.findViewById(R.id.txtSpnChar2_2);
-        txtSpnChar2_2.addTextChangedListener(mChangeText_2);
-        txtNum3_2 = (EditText) v.findViewById(R.id.txtNum3_2);
-        txtNum3_2.addTextChangedListener(mChangeText_2);
-        txtSpnSur_2 = (EditText) v.findViewById(R.id.txtSpnSur_2);
-        txtSpnSur_2.addTextChangedListener(mChangeText_2);
-        txtInfo_2 = (EditText) v.findViewById(R.id.txtInfo_2);
-        txtInfo_2.addTextChangedListener(mChangeText_2);
+        txtDireccion21 = (EditText) v.findViewById(R.id.txtDireccion21);
+        txtDireccion21.addTextChangedListener(mChangeText_2);
         txtSpnDpto_2 = (EditText) v.findViewById(R.id.txtSpnDpto_2);
         txtSpnCity_2 = (EditText) v.findViewById(R.id.txtSpnCity_2);
         txtSpnBarrio_2 = (EditText) v.findViewById(R.id.txtSpnBarrio_2);
@@ -273,26 +236,15 @@ public class InscripcionFragment_NEW extends Fragment {
         txtEmail = (EditText) v.findViewById(R.id.txtEmail);
 
         txtDateBird.setOnClickListener(mListenerClick);
-        txtSpnTypeVia.setOnClickListener(mListenerClick);
-        txtSpnChar1.setOnClickListener(mListenerClick);
-        txtSpnBis.setOnClickListener(mListenerClick);
-        txtSpnChar2.setOnClickListener(mListenerClick);
-        txtSpnSur.setOnClickListener(mListenerClick);
+        txtDireccion.setOnClickListener(mListenerClick);
+
         txtSpnDpto.setOnClickListener(mListenerClick);
         txtSpnCity.setOnClickListener(mListenerClick);
         txtSpnBarrio.setOnClickListener(mListenerClick);
 
         //events direccion envio
         txtSpnDirSend.setOnClickListener(mListenerClick);
-        txtSpnTypeVia_2.setOnClickListener(mListenerClick);
-        txtNum1_2.setOnClickListener(mListenerClick);
-        txtSpnChar1_2.setOnClickListener(mListenerClick);
-        txtSpnBis_2.setOnClickListener(mListenerClick);
-        txtNum2_2.setOnClickListener(mListenerClick);
-        txtSpnChar2_2.setOnClickListener(mListenerClick);
-        txtNum3_2.setOnClickListener(mListenerClick);
-        txtSpnSur_2.setOnClickListener(mListenerClick);
-        txtInfo_2.setOnClickListener(mListenerClick);
+        txtDireccion21.setOnClickListener(mListenerClick);
         txtSpnDpto_2.setOnClickListener(mListenerClick);
         txtSpnCity_2.setOnClickListener(mListenerClick);
         txtSpnBarrio_2.setOnClickListener(mListenerClick);
@@ -488,21 +440,6 @@ public class InscripcionFragment_NEW extends Fragment {
                 case R.id.txtDateBird:
                     showDate(DateDialog.BROACAST_REG_TYPE_BIRD);
                     break;
-                case R.id.txtSpnTypeVia:
-                    showList(ListString.BROACAST_REG_TYPE_VIA, getString(R.string.tipo_via), Arrays.asList(getResources().getStringArray(R.array.typeVia)), txtSpnTypeVia.getText().toString());
-                    break;
-                case R.id.txtSpnChar1:
-                    showList(ListString.BROACAST_REG_TYPE_LETRA1, getString(R.string.letra), Arrays.asList(getResources().getStringArray(R.array.charOption)), txtSpnChar1.getText().toString());
-                    break;
-                case R.id.txtSpnBis:
-                    showList(ListString.BROACAST_REG_TYPE_BIS, getString(R.string.bis), Arrays.asList(getResources().getStringArray(R.array.bis)), txtSpnBis.getText().toString());
-                    break;
-                case R.id.txtSpnChar2:
-                    showList(ListString.BROACAST_REG_TYPE_LETRA2, getString(R.string.letra), Arrays.asList(getResources().getStringArray(R.array.charOption)), txtSpnChar2.getText().toString());
-                    break;
-                case R.id.txtSpnSur:
-                    showList(ListString.BROACAST_REG_TYPE_SUR, getString(R.string.sur), Arrays.asList(getResources().getStringArray(R.array.coord)), txtSpnSur.getText().toString());
-                    break;
                 case R.id.txtSpnDpto:
                     if(listDpto!=null)
                         showDpto(ListDpto.BROACAST_REG_TYPE_DPTO, getString(R.string.departamento), listDpto, txtSpnDpto.getText().toString());
@@ -525,19 +462,7 @@ public class InscripcionFragment_NEW extends Fragment {
                     break;
 
                 case R.id.txtSpnTypeVia_2:
-                    showList(ListString.BROACAST_REG_TYPE_VIA_2, getString(R.string.tipo_via), Arrays.asList(getResources().getStringArray(R.array.typeVia)), txtSpnTypeVia_2.getText().toString());
-                    break;
-                case R.id.txtSpnChar1_2:
-                    showList(ListString.BROACAST_REG_TYPE_LETRA1_2, getString(R.string.letra), Arrays.asList(getResources().getStringArray(R.array.charOption)), txtSpnChar1_2.getText().toString());
-                    break;
-                case R.id.txtSpnBis_2:
-                    showList(ListString.BROACAST_REG_TYPE_BIS_2, getString(R.string.bis), Arrays.asList(getResources().getStringArray(R.array.bis)), txtSpnBis_2.getText().toString());
-                    break;
-                case R.id.txtSpnChar2_2:
-                    showList(ListString.BROACAST_REG_TYPE_LETRA2_2, getString(R.string.letra), Arrays.asList(getResources().getStringArray(R.array.charOption)), txtSpnChar2_2.getText().toString());
-                    break;
-                case R.id.txtSpnSur_2:
-                    showList(ListString.BROACAST_REG_TYPE_SUR_2, getString(R.string.sur), Arrays.asList(getResources().getStringArray(R.array.coord)), txtSpnSur_2.getText().toString());
+                    showList(ListString.BROACAST_REG_TYPE_VIA_2, getString(R.string.tipo_via), Arrays.asList(getResources().getStringArray(R.array.typeVia)), txtDireccion21.getText().toString());
                     break;
                 case R.id.txtSpnDpto_2:
                     if(listDpto!=null)
@@ -618,28 +543,6 @@ public class InscripcionFragment_NEW extends Fragment {
     private boolean validateIncrip(){
         Validate validate = new Validate();
 
-        /*if(txtNameIncrip.getText().toString().isEmpty()){
-            msgToast("Nombre de asesora... Verifique");
-            validate.setLoginError(getString(R.string.campo_requerido),txtNameIncrip);
-            return false;
-        }else if(txtIdentyCard.getText().toString().isEmpty()){
-            msgToast("Cêdula de asesora... Verifique");
-            validate.setLoginError(getString(R.string.campo_requerido),txtIdentyCard);
-            return false;
-        }
-
-        else if(txtIdentyCardRef.getText().toString().isEmpty()){
-            msgToast("Cêdula de referido... Verifique");
-            validate.setLoginError(getString(R.string.campo_requerido),txtIdentyCardRef);
-            return false;
-        }else if(!isRefValidated()){
-            msgToast("Debe validar la cédula del referido... Verifique");
-            validate.setLoginError(getString(R.string.deba_validar),txtIdentyCardRef);
-            return false;
-        }
-
-
-        else */
         if(file0==null && !modeEdit){
             msgToast("Cédula frontal... Verifique");
             //validate.setLoginError(getString(R.string.deba_validar),txtIdentyCardRef);
@@ -664,17 +567,6 @@ public class InscripcionFragment_NEW extends Fragment {
             msgToast("factura... Verifique");
             return false;
         }
-
-        /*else if(txtSpnTypeDoc1.getText().toString().isEmpty()){
-            msgToast("tipo de cêdula de ref. personal... Verifique");
-            validate.setLoginError(getString(R.string.campo_requerido),txtSpnTypeDoc1);
-            return false;
-        }
-        else if(txtIdentyCard1.getText().toString().isEmpty()){
-            msgToast("Cêdula de ref. personal... Verifique");
-            validate.setLoginError(getString(R.string.campo_requerido),txtIdentyCard1);
-            return false;
-        }*/
         else if(txtName1.getText().toString().isEmpty()){
             msgToast("Nombre de ref. personal... Verifique");
             validate.setLoginError(getString(R.string.campo_requerido),txtName1);
@@ -685,11 +577,6 @@ public class InscripcionFragment_NEW extends Fragment {
             validate.setLoginError(getString(R.string.campo_requerido),txtLastName1);
             return false;
         }
-        /*else if(txtPhone1.getText().toString().isEmpty()){
-            msgToast("Teléfono de ref. personal... Verifique");
-            validate.setLoginError(getString(R.string.campo_requerido),txtPhone1);
-            return false;
-        }*/
         else if(txtCellPhone1.getText().toString().isEmpty()){
             msgToast("Celular de ref. personal... Verifique");
             validate.setLoginError(getString(R.string.campo_requerido),txtCellPhone1);
@@ -700,18 +587,6 @@ public class InscripcionFragment_NEW extends Fragment {
             validate.setLoginError(getString(R.string.campo_requerido),txtSpnParentesco1);
             return false;
         }
-
-        /*
-        else if(txtSpnTypeDoc2.getText().toString().isEmpty()){
-            msgToast("tipo de cêdula de ref. familiar... Verifique");
-            validate.setLoginError(getString(R.string.campo_requerido),txtSpnTypeDoc2);
-            return false;
-        }
-        else if(txtIdentyCard2.getText().toString().isEmpty()){
-            msgToast("Cêdula de ref. familiar... Verifique");
-            validate.setLoginError(getString(R.string.campo_requerido),txtIdentyCard2);
-            return false;
-        }*/
         else if(txtName2.getText().toString().isEmpty()){
             msgToast("Nombre de ref. familiar... Verifique");
             validate.setLoginError(getString(R.string.campo_requerido),txtName2);
@@ -722,12 +597,6 @@ public class InscripcionFragment_NEW extends Fragment {
             validate.setLoginError(getString(R.string.campo_requerido),txtLastName2);
             return false;
         }
-        /*
-        else if(txtPhone2.getText().toString().isEmpty()){
-            msgToast("Teléfono de ref. familiar... Verifique");
-            validate.setLoginError(getString(R.string.campo_requerido),txtPhone2);
-            return false;
-        }*/
         else if(txtCellPhone2.getText().toString().isEmpty()){
             msgToast("Celular de ref. familiar... Verifique");
             validate.setLoginError(getString(R.string.campo_requerido),txtCellPhone2);
@@ -850,40 +719,8 @@ public class InscripcionFragment_NEW extends Fragment {
                     ///CAMBIOS NUEVOS
                     case ListString.BROACAST_REG_TYPE_VIA:
                         Log.i(TAG,"BROACAST_REG_TYPE_VIA");
-                        txtSpnTypeVia.setError(null);
-                        txtSpnTypeVia.setText(intent.getStringExtra(ListString.BROACAST_DATA));
-                        break;
-                    case ListString.BROACAST_REG_TYPE_LETRA1:
-                        Log.i(TAG,"BROACAST_REG_TYPE_LETRA1");
-                        txtSpnChar1.setError(null);
-                        txtSpnChar1.setText(
-                                intent.getStringExtra(ListString.BROACAST_DATA).
-                                        equals(Arrays.asList(getResources().
-                                                getStringArray(R.array.charOption)).get(0)) ? "" :intent.getStringExtra(ListString.BROACAST_DATA));
-                        break;
-                    case ListString.BROACAST_REG_TYPE_BIS:
-                        Log.i(TAG,"BROACAST_REG_TYPE_BIS");
-                        txtSpnBis.setError(null);
-                        txtSpnBis.setText(
-                                intent.getStringExtra(ListString.BROACAST_DATA).
-                                        equals(Arrays.asList(getResources().
-                                                getStringArray(R.array.bis)).get(0)) ? "" :intent.getStringExtra(ListString.BROACAST_DATA));
-                        break;
-                    case ListString.BROACAST_REG_TYPE_LETRA2:
-                        Log.i(TAG,"BROACAST_REG_TYPE_LETRA2");
-                        txtSpnChar2.setError(null);
-                        txtSpnChar2.setText(
-                                intent.getStringExtra(ListString.BROACAST_DATA).
-                                        equals(Arrays.asList(getResources().
-                                                getStringArray(R.array.charOption)).get(0)) ? "" :intent.getStringExtra(ListString.BROACAST_DATA));
-                        break;
-                    case ListString.BROACAST_REG_TYPE_SUR:
-                        Log.i(TAG,"BROACAST_REG_TYPE_SUR");
-                        txtSpnSur.setError(null);
-                        txtSpnSur.setText(
-                                intent.getStringExtra(ListString.BROACAST_DATA).
-                                        equals(Arrays.asList(getResources().
-                                                getStringArray(R.array.charOption)).get(0)) ? "" :intent.getStringExtra(ListString.BROACAST_DATA));
+                        txtDireccion.setError(null);
+                        txtDireccion.setText(intent.getStringExtra(ListString.BROACAST_DATA));
                         break;
                     case ListDpto.BROACAST_REG_TYPE_DPTO:
                         //limpiar
@@ -929,40 +766,8 @@ public class InscripcionFragment_NEW extends Fragment {
                         break;
                     case ListString.BROACAST_REG_TYPE_VIA_2:
                         Log.i(TAG,"BROACAST_REG_TYPE_VIA_2");
-                        txtSpnTypeVia_2.setError(null);
-                        txtSpnTypeVia_2.setText(intent.getStringExtra(ListString.BROACAST_DATA));
-                        break;
-                    case ListString.BROACAST_REG_TYPE_LETRA1_2:
-                        Log.i(TAG,"BROACAST_REG_TYPE_LETRA1_2");
-                        txtSpnChar1_2.setError(null);
-                        txtSpnChar1_2.setText(
-                                intent.getStringExtra(ListString.BROACAST_DATA).
-                                        equals(Arrays.asList(getResources().
-                                                getStringArray(R.array.charOption)).get(0)) ? "" :intent.getStringExtra(ListString.BROACAST_DATA));
-                        break;
-                    case ListString.BROACAST_REG_TYPE_BIS_2:
-                        Log.i(TAG,"BROACAST_REG_TYPE_BIS_2");
-                        txtSpnBis_2.setError(null);
-                        txtSpnBis_2.setText(
-                                intent.getStringExtra(ListString.BROACAST_DATA).
-                                        equals(Arrays.asList(getResources().
-                                                getStringArray(R.array.bis)).get(0)) ? "" :intent.getStringExtra(ListString.BROACAST_DATA));
-                        break;
-                    case ListString.BROACAST_REG_TYPE_LETRA2_2:
-                        Log.i(TAG,"BROACAST_REG_TYPE_LETRA2_2");
-                        txtSpnChar2_2.setError(null);
-                        txtSpnChar2_2.setText(
-                                intent.getStringExtra(ListString.BROACAST_DATA).
-                                        equals(Arrays.asList(getResources().
-                                                getStringArray(R.array.charOption)).get(0)) ? "" :intent.getStringExtra(ListString.BROACAST_DATA));
-                        break;
-                    case ListString.BROACAST_REG_TYPE_SUR_2:
-                        Log.i(TAG,"BROACAST_REG_TYPE_SUR_2");
-                        txtSpnSur_2.setError(null);
-                        txtSpnSur_2.setText(
-                                intent.getStringExtra(ListString.BROACAST_DATA).
-                                        equals(Arrays.asList(getResources().
-                                                getStringArray(R.array.charOption)).get(0)) ? "" :intent.getStringExtra(ListString.BROACAST_DATA));
+                        txtDireccion21.setError(null);
+                        txtDireccion21.setText(intent.getStringExtra(ListString.BROACAST_DATA));
                         break;
                     case ListDpto.BROACAST_REG_TYPE_DPTO_2:
                         //limpiar
@@ -1210,7 +1015,7 @@ public class InscripcionFragment_NEW extends Fragment {
 
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            txtConcatenateDir_2.setText(concatenateDir_2());
+           // txtConcatenateDir_2.setText(concatenateDir_2());
         }
 
         @Override
@@ -1234,39 +1039,17 @@ public class InscripcionFragment_NEW extends Fragment {
 
     public String concatenateDir()
     {
-        return txtSpnTypeVia.getText().toString() + " " +
+        return txtDireccion.getText().toString() + " " +
                 (txtNum1.getText().toString() + " ") +
-                (txtSpnChar1.getText().toString() + " ") +
-                (txtSpnBis.getText().toString() + " ") +
-                (txtNum2.getText().toString() + " ") +
-                (txtSpnChar2.getText().toString() + " ") +
-                (txtNum3.getText().toString() + " ") +
-                (txtSpnSur.getText().toString() + " ") +
-                txtInfo.getText().toString();
+                (txtNum2.getText().toString() + " ")  ;
     }
 
     public String concatenateDir_2() {
-        return txtSpnTypeVia_2.getText().toString() + " " +
-                (txtNum1_2.getText().toString() + " ") +
-                (txtSpnChar1_2.getText().toString() + " ") +
-                (txtSpnBis_2.getText().toString() + " ") +
-                (txtNum2_2.getText().toString() + " ") +
-                (txtSpnChar2_2.getText().toString() + " ") +
-                (txtNum3_2.getText().toString() + " ") +
-                (txtSpnSur_2.getText().toString() + " ") +
-                txtInfo_2.getText().toString();
+        return txtDireccion21.getText().toString() + " " ;
     }
 
     public String concatenateDir_2_Protocol() {
-        return txtSpnTypeVia_2.getText().toString() + " | " +
-                (txtNum1_2.getText().toString() + " | ") +
-                (txtSpnChar1_2.getText().toString() + " | ") +
-                (txtSpnBis_2.getText().toString() + " | ") +
-                (txtNum2_2.getText().toString() + " | ") +
-                (txtSpnChar2_2.getText().toString() + " | ") +
-                (txtNum3_2.getText().toString() + " | ") +
-                (txtSpnSur_2.getText().toString() + " | ") +
-                txtInfo_2.getText().toString() + " | " +
+        return txtDireccion21.getText().toString() + " | " +
 
                 (txtSpnDpto_2.getTag() != null ? txtSpnDpto_2.getTag().toString() : "") + " | " +
                 (txtSpnDpto_2.getText() != null ? txtSpnDpto_2.getText().toString() : "") + " | " +
@@ -1284,32 +1067,18 @@ public class InscripcionFragment_NEW extends Fragment {
 
         //Direccion residencia
         txtConcatenateDir.setText("");
-        txtConcatenateDir_2.setText("");
 
-        txtSpnTypeVia.setText("");
+
+        txtDireccion.setText("");
         txtNum1.setText("");
-        txtSpnChar1.setText("");
-        txtSpnBis.setText("");
         txtNum2.setText("");
-        txtSpnChar2.setText("");
-        txtNum3.setText("");
-        txtSpnSur.setText("");
-        txtInfo.setText("");
         txtSpnDpto.setText("");
         txtSpnCity.setText("");
         txtSpnBarrio.setText("");
 
         //Direccion de envio
         txtSpnDirSend.setText("");
-        txtSpnTypeVia_2.setText("");
-        txtNum1_2.setText("");
-        txtSpnChar1_2.setText("");
-        txtSpnBis_2.setText("");
-        txtNum2_2.setText("");
-        txtSpnChar2_2.setText("");
-        txtNum3_2.setText("");
-        txtSpnSur_2.setText("");
-        txtInfo_2.setText("");
+        txtDireccion21.setText("");
         txtSpnDpto_2.setText("");
         txtSpnCity_2.setText("");
         txtSpnBarrio_2.setText("");
@@ -1336,32 +1105,19 @@ public class InscripcionFragment_NEW extends Fragment {
 
         //Direccion residencia
         txtConcatenateDir.setEnabled(refValidated);
-        txtConcatenateDir_2.setEnabled(refValidated);
 
-        txtSpnTypeVia.setEnabled(refValidated);
+
+        txtDireccion.setEnabled(refValidated);
         txtNum1.setEnabled(refValidated);
-        txtSpnChar1.setEnabled(refValidated);
-        txtSpnBis.setEnabled(refValidated);
+
         txtNum2.setEnabled(refValidated);
-        txtSpnChar2.setEnabled(refValidated);
-        txtNum3.setEnabled(refValidated);
-        txtSpnSur.setEnabled(refValidated);
-        txtInfo.setEnabled(refValidated);
         txtSpnDpto.setEnabled(refValidated);
         txtSpnCity.setEnabled(refValidated);
         txtSpnBarrio.setEnabled(refValidated);
 
         //Direccion de envio
         txtSpnDirSend.setEnabled(refValidated);
-        txtSpnTypeVia_2.setEnabled(refValidated);
-        txtNum1_2.setEnabled(refValidated);
-        txtSpnChar1_2.setEnabled(refValidated);
-        txtSpnBis_2.setEnabled(refValidated);
-        txtNum2_2.setEnabled(refValidated);
-        txtSpnChar2_2.setEnabled(refValidated);
-        txtNum3_2.setEnabled(refValidated);
-        txtSpnSur_2.setEnabled(refValidated);
-        txtInfo_2.setEnabled(refValidated);
+        txtDireccion21.setEnabled(refValidated);
         txtSpnDpto_2.setEnabled(refValidated);
         txtSpnCity_2.setEnabled(refValidated);
         txtSpnBarrio_2.setEnabled(refValidated);
@@ -1409,40 +1165,12 @@ public class InscripcionFragment_NEW extends Fragment {
             valid.setLoginError(getResources().getString(R.string.campo_requerido), txtZone);
             return false;
         }
-
-        //REDIDENCIA
-        else if (txtSpnTypeVia.getText().toString().isEmpty())
+        else if (txtDireccion.getText().toString().isEmpty())
         {
-            msgToast("Dir. Res. > Tipo de vía... Verifique");
-            valid.setLoginError(getResources().getString(R.string.campo_requerido), txtSpnTypeVia);
+            msgToast("Dir. > La direccion no puede ser Vacia... Verifique");
+            valid.setLoginError(getResources().getString(R.string.campo_requerido), txtDireccion);
             return false;
         }
-        else if (!txtSpnTypeVia.getText().toString().toUpperCase().equals("Otro".toUpperCase()) && txtNum1.getText().toString().isEmpty())
-        {
-            msgToast("Dir. Res. > Número 1... Verifique");
-            valid.setLoginError(getResources().getString(R.string.campo_requerido), txtNum1);
-            return false;
-        }
-        else if (!txtSpnTypeVia.getText().toString().toUpperCase().equals("Otro".toUpperCase()) && txtNum2.getText().toString().isEmpty())
-        {
-            msgToast("Dir. Res. > Número 2... Verifique");
-            valid.setLoginError(getResources().getString(R.string.campo_requerido), txtNum2);
-            return false;
-        }
-        else if (!txtSpnTypeVia.getText().toString().toUpperCase().equals("Otro".toUpperCase()) && txtNum3.getText().toString().isEmpty())
-        {
-            msgToast("Dir. Res. > Número 3... Verifique");
-            valid.setLoginError(getResources().getString(R.string.campo_requerido), txtNum3);
-            return false;
-        }
-        else if (txtSpnTypeVia.getText().toString().toUpperCase().equals("Otro".toUpperCase())  && txtInfo.getText().toString().isEmpty())
-        {
-            msgToast("Dir. Res. > Datos adicionales...");
-            valid.setLoginError(getResources().getString(R.string.campo_requerido), txtInfo);
-            return false;
-        }
-
-        //departamento
         else if (txtSpnDpto.getText().toString().isEmpty())
         {
             msgToast("Dir. Res. > Dpto... Verifique");
@@ -1464,37 +1192,12 @@ public class InscripcionFragment_NEW extends Fragment {
 
         //DIRECCION DE ENVIO DE PEDIDOS
         else if (ctxDirSend.getVisibility()==View.VISIBLE) {
-            if (txtSpnTypeVia_2.getText().toString().isEmpty())
+            if (txtDireccion21.getText().toString().isEmpty())
             {
                 msgToast("Dir. Envío. > Tipo de vía... Verifique");
-                valid.setLoginError(getResources().getString(R.string.campo_requerido), txtSpnTypeVia_2);
+                valid.setLoginError(getResources().getString(R.string.campo_requerido), txtDireccion21);
                 return false;
             }
-            else if (!txtSpnTypeVia_2.getText().toString().toUpperCase().equals("Otro".toUpperCase()) && txtNum1_2.getText().toString().isEmpty())
-            {
-                msgToast("Dir. Envío. > Número 1... Verifiqu");
-                valid.setLoginError(getResources().getString(R.string.campo_requerido), txtNum1_2);
-                return false;
-            }
-            else if (!txtSpnTypeVia.getText().toString().toUpperCase().equals("Otro".toUpperCase())  && txtNum2_2.getText().toString().isEmpty())
-            {
-                msgToast("Dir. Envío. > Número 2... Verifiqu");
-                valid.setLoginError(getResources().getString(R.string.campo_requerido), txtNum2_2);
-                return false;
-            }
-            else if (!txtSpnTypeVia.getText().toString().toUpperCase().equals("Otro".toUpperCase())  && txtNum3_2.getText().toString().isEmpty())
-            {
-                msgToast("Dir. Envío. > Número 3... Verifiqu");
-                valid.setLoginError(getResources().getString(R.string.campo_requerido), txtNum3_2);
-                return false;
-            }
-            else if (txtSpnTypeVia.getText().toString().toUpperCase().equals("Otro".toUpperCase())  && txtInfo_2.getText().toString().isEmpty())
-            {
-                msgToast("Dir. Envío. > Datos adicionales...");
-                valid.setLoginError(getResources().getString(R.string.campo_requerido), txtInfo_2);
-                return false;
-            }
-
             //departamento
             else if (txtSpnDpto_2.getText().toString().isEmpty())
             {
@@ -1532,23 +1235,10 @@ public class InscripcionFragment_NEW extends Fragment {
 
     private boolean validatenew(){
         Validate valid=new Validate();
-        //contacto
-        /*
-        if (txtPhone.getText().toString().isEmpty())
+
+        if (  isPhoneNumberValid(txtCellphone.getText().toString()))
         {
-            msgToast("Teléfono fijo... Verifique");
-            valid.setLoginError(getResources().getString(R.string.campo_requerido), txtPhone);
-            return false;
-        }
-        else if (txtCellphone.getText().toString().isEmpty())
-        {
-            msgToast("Teléfono movil... Verifique");
-            valid.setLoginError(getResources().getString(R.string.campo_requerido), txtCellphone);
-            return false;
-        }
-        else */if (!txtCellphone.getText().toString().isEmpty() && txtCellphone.getText().toString().length() < 10)
-        {
-            msgToast("Teléfono movil (10 números)... Verifique");
+            msgToast("Teléfono movil (8 números)... Verifique");
             valid.setLoginError(getResources().getString(R.string.campo_requerido), txtCellphone);
             return false;
         }
@@ -1558,13 +1248,6 @@ public class InscripcionFragment_NEW extends Fragment {
             valid.setLoginError(getResources().getString(R.string.campo_requerido), txtCellphone);
             return false;
         }
-        /*
-        else if (valid.isValidEmail(txtEmail.getText().toString()))
-        {
-            msgToast("Formato de correo incorrecto... Verifique");
-            valid.setLoginError(getResources().getString(R.string.formato_incorrecto), txtEmail);
-            return false;
-        }*/
         return true;
     }
 
@@ -1575,10 +1258,6 @@ public class InscripcionFragment_NEW extends Fragment {
         Log.e(TAG,"new setUserVisibleHint(): "+String.valueOf(isVisibleToUser));
         ValidChargeDir=true;
         ValidEditDir=true;
-        /*if(isVisibleToUser)
-            registerBroadcat();
-        else
-            registerBroadcat();*/
     }
 
     private ProgressDialog pDialog;
@@ -1603,13 +1282,6 @@ public class InscripcionFragment_NEW extends Fragment {
     }
 
     public void convertPathToImage(String pathImage, ImageView image){
-        /*File imgFile = new  File(pathImage);
-        if(imgFile.exists()){
-            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-            image.setImageBitmap(myBitmap);
-        } else {
-            msgToast("Ocurrio un problema al leer la imagen");
-        }*/
         image.setImageBitmap(resizeBitmap(pathImage, 256, 256));//para mostrar en pantalla con poca resolusion 960, 1200 en xamarin para enviar, 256x256 para mostrar
     }
 
@@ -2086,33 +1758,21 @@ public class InscripcionFragment_NEW extends Fragment {
                 //nacimiento = datePickDate.Date.ToString(),
                 "52486488956555",
                 //imei = "52486488956555",
-                txtSpnTypeVia.getText().toString(),
-                //tipo_via = pickerTipoVia.SelectedIndex != -1 ? pickerTipoVia.Items[pickerTipoVia.SelectedIndex] : "",
-                txtNum1.getText().toString(),
-                //numero1 = (pickerBehavior_via.SelectedItem.Equals("Otro") ? "" : txtNum1.Text.Trim()),
-                //letra1 = pickerLetra1.SelectedIndex != -1 ? pickerLetra1.Items[pickerLetra1.SelectedIndex] : "",
-                txtSpnChar1.getText().toString(),
-                //bis = pickerBis.SelectedIndex != -1 ? pickerBis.Items[pickerBis.SelectedIndex] : "",
-                txtSpnBis.getText().toString(),
-                //numero2 = (pickerBehavior_via.SelectedItem.Equals("Otro") ? "" : txtNum2.Text.Trim()),
-                txtNum2.getText().toString(),
-                //letra2 = pickerLetra2.SelectedIndex != -1 ? pickerLetra2.Items[pickerLetra2.SelectedIndex] : "",
-                txtSpnChar2.getText().toString(),
-                //numero3 = (pickerBehavior_via.SelectedItem.Equals("Otro") ? "" : txtNum3.Text.Trim()),
-                txtNum3.getText().toString(),
-                //pcardinal = pickerEsteOeste.SelectedIndex != -1 ? pickerEsteOeste.Items[pickerEsteOeste.SelectedIndex] : "",
-                txtSpnSur.getText().toString(),
+                txtDireccion.getText().toString(),
+                txtNum1.getText().toString(),"",
+                txtNum2.getText().toString(),"",
+                "direccion",
+                "numero3",
+                "spin sur",
                 //complemento = (!pickerBehavior_via.SelectedItem.Equals("Otro") ? "" : txtComp.Text.Trim()),
-                txtInfo.getText().toString(),
                 txtConcatenateDir.getText().toString(),
-                ctxDirSend.getVisibility()==View.GONE ? "" : concatenateDir_2_Protocol() /*txtConcatenateDir_2.getText().toString()*/,
+                ctxDirSend.getVisibility()==View.GONE ? "" : concatenateDir_2_Protocol() ,
                 ctxDirSend.getVisibility()==View.GONE ? "" : barrio_2.getId_barrio()
         );
 
         dataRegisterModel.setDireccion_concatenada(
                 dataRegisterModel.getTipo_via() + " " +
                         (dataRegisterModel.getNumero1() + " ") +
-                        (dataRegisterModel.getLetra1() + " ") +
                         (dataRegisterModel.getBis() + " ") +
                         (dataRegisterModel.getNumero2() + " ") +
                         (dataRegisterModel.getLetra2() + " ") +
@@ -2145,17 +1805,6 @@ public class InscripcionFragment_NEW extends Fragment {
         txtDateBird.setText(data.getNacimiento());
         //"52486488956555",
 
-        /*txtSpnTypeVia.setText(data.getTipo_via());
-        txtNum1.setText(data.getNumero1());
-        txtSpnChar1.setText(data.getLetra1());
-        txtSpnBis.setText(data.getBis());
-        txtNum2.setText(data.getNumero2());
-        txtSpnChar2.setText(data.getLetra2());
-        txtNum3.setText(data.getNumero3());
-        txtSpnSur.setText(data.getPcardinal());
-        txtInfo.setText(data.getComplemento());*/
-
-
         txtSpnDpto.setText(data.getDepartamento());
         ciudad = new Ciudad(String.valueOf(data.getId_ciudad()), data.getName_ciudad());
         txtSpnCity.setText(ciudad.getName_ciudad());
@@ -2172,10 +1821,9 @@ public class InscripcionFragment_NEW extends Fragment {
             img_gps.setBackgroundColor(Color.GREEN);
             txtConcatenateDir.setText(data.getDireccion_concatenada());
         }
-        //ctxDirSend.getVisibility()==View.GONE ? "" : txtConcatenateDir_2.getText().toString(),
-        //ctxDirSend.getVisibility()==View.GONE ? "" : barrio_2.getId_barrio()
 
-        ////SET
+
+
         String dir_envio = data.getDireccion_envio();
         if(!dir_envio.isEmpty()) {
              String[] dataArray = dir_envio.split(" \\| ");
@@ -2188,16 +1836,7 @@ public class InscripcionFragment_NEW extends Fragment {
             ctxDirSend.setVisibility(View.VISIBLE);
 
             if(dataArray.length == 15){
-                txtSpnTypeVia_2.setText(dataArray[0]);
-                txtNum1_2.setText(dataArray[1]);
-                txtSpnChar1_2.setText(dataArray[2]);
-                txtSpnBis_2.setText(dataArray[3]);
-                txtNum2_2.setText(dataArray[4]);
-                txtSpnChar2_2.setText(dataArray[5]);
-                txtNum3_2.setText(dataArray[6]);
-                txtSpnSur_2.setText(dataArray[7]);
-                txtInfo_2.setText(dataArray[8]);
-
+                txtDireccion21.setText(dataArray[0]);
                 txtSpnDpto_2.setTag(dataArray[9]);
                 txtSpnDpto_2.setText(dataArray[10]);
 
@@ -2401,6 +2040,10 @@ public class InscripcionFragment_NEW extends Fragment {
                     break;
             }
         }
+    }
+
+    boolean isPhoneNumberValid(String phoneNumber){
+        return (!phoneNumber.isEmpty() && phoneNumber.length() > 6);
     }
 
 }
