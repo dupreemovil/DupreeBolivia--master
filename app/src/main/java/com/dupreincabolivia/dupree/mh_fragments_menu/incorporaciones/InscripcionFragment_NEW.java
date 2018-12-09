@@ -99,6 +99,7 @@ import static android.content.Context.LOCATION_SERVICE;
  */
 public class InscripcionFragment_NEW extends Fragment {
     public static final String TAG = "InscripcionFragment";
+    public static final Integer MAXIMUM_ACCURACY_OF_LOCATION_ALLOWED = 50;
     public static final String BROACAST_INSCRIP_TYPE_VALIDATE_REF = "inscrip_type_validate_ref";
 
     public static final String BROACAST_INSCRIP_TYPE_IMG_CED_FRONT_PATH = "inscrip_type_path_ced_front";
@@ -737,7 +738,7 @@ public class InscripcionFragment_NEW extends Fragment {
             validate.setLoginError(getString(R.string.campo_requerido),txtSpnParentesco2);
             return false;
         }
-        else if(Acc>10 || (DirGeo.isEmpty())){
+        else if(Acc>MAXIMUM_ACCURACY_OF_LOCATION_ALLOWED || (DirGeo.isEmpty())){
             msgToast("Verificacion de localizacion no se ha completado");
             return false;
         }
@@ -2346,11 +2347,11 @@ public class InscripcionFragment_NEW extends Fragment {
                     Lati=loc.getLatitude();
                     Longi=loc.getLongitude();
                     DirGeo=DirCalle.getAddressLine(0);
-                    if(Acc<10 &&  ValidEditDir==true && ValidChargeDir==true){
+                    if(Acc<MAXIMUM_ACCURACY_OF_LOCATION_ALLOWED &&  ValidEditDir==true && ValidChargeDir==true){
                         img_gps.setBackgroundColor(Color.GREEN);
                         txtConcatenateDir.setText(DirGeo);
                     }else{
-                        if(Acc<10 &&  ValidEditDir==true && ValidChargeDir==false){
+                        if(Acc<MAXIMUM_ACCURACY_OF_LOCATION_ALLOWED &&  ValidEditDir==true && ValidChargeDir==false){
                             img_gps.setBackgroundColor(Color.GREEN);
                         }else{
                         img_gps.setBackgroundColor(Color.RED);}
