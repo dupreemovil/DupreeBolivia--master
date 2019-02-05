@@ -3316,7 +3316,6 @@ public class Http {
                 body/*,
                 name*/
         );
-
         call.enqueue(new Callback<ResponseGeneric>() {
             @Override
             public void onResponse(Call<ResponseGeneric> call, Response<ResponseGeneric> response) {

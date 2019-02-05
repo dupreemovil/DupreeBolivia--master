@@ -1,6 +1,7 @@
 package com.dupreincabolivia.dupree.mh_fragments_menu.incorporaciones;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
@@ -28,6 +29,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
+import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -167,13 +169,12 @@ public class InscripcionFragment_NEW extends Fragment {
 
 
     // --------- DE CAMBIOS SOLICITADOS
-    EditText txtDateBird, txtZone, txtDireccion,
-            txtNum1,  txtNum2,
-            txtSpnDpto, txtSpnCity, txtSpnBarrio, txtSpnDirSend, txtPhone, txtCellphone,
+    EditText txtDateBird, txtZone, txtSector, txtDireccion, txtInterseccion,
+            txtNum1,  txtNum2, txtSpnDpto, txtSpnCity, txtSpnBarrio, txtSpnDirSend, txtPhone, txtCellphone,
             txtEmail;
     TextView txtConcatenateDir;
     LinearLayout ctxDirSend;
-    EditText txtDireccion21,  txtSpnDpto_2, txtSpnCity_2, txtSpnBarrio_2;
+    EditText txtDireccion21, txtInterseccion2,  txtSpnDpto_2, txtSpnCity_2, txtSpnBarrio_2;
     ImageView img_gps;
     // --------- DE CAMBIOS SOLICITADOS
 
@@ -202,12 +203,15 @@ public class InscripcionFragment_NEW extends Fragment {
         // --------- DE CAMBIOS SOLICITADOS
         txtDateBird = (EditText) v.findViewById(R.id.txtDateBird);
         txtZone = (EditText) v.findViewById(R.id.txtZone);
+        txtSector = (EditText) v.findViewById(R.id.txtSector);
         img_gps = (ImageView) v.findViewById(R.id.img_gps);
 
         //Direccion residencia
         txtConcatenateDir = (TextView) v.findViewById(R.id.txtConcatenateDir);
         txtDireccion = (EditText) v.findViewById(R.id.txtDireccion);
         txtDireccion.addTextChangedListener(mChangeText);
+        txtInterseccion = (EditText) v.findViewById(R.id.txtInterseccion);
+        txtInterseccion.addTextChangedListener(mChangeText);
         txtNum1 = (EditText) v.findViewById(R.id.txtNum1);
         txtNum1.addTextChangedListener(mChangeText);
         txtNum2 = (EditText) v.findViewById(R.id.txtNum2);
@@ -226,6 +230,9 @@ public class InscripcionFragment_NEW extends Fragment {
 
         txtDireccion21 = (EditText) v.findViewById(R.id.txtDireccion21);
         txtDireccion21.addTextChangedListener(mChangeText_2);
+
+        txtInterseccion2=(EditText) v.findViewById(R.id.txtInterseccion2);
+
         txtSpnDpto_2 = (EditText) v.findViewById(R.id.txtSpnDpto_2);
         txtSpnCity_2 = (EditText) v.findViewById(R.id.txtSpnCity_2);
         txtSpnBarrio_2 = (EditText) v.findViewById(R.id.txtSpnBarrio_2);
@@ -302,6 +309,7 @@ public class InscripcionFragment_NEW extends Fragment {
         localBroadcastReceiver = new LocalBroadcastReceiver();
 
         url_image = new ArrayList<>();
+        url_image.add("");
         url_image.add("");
         url_image.add("");
         url_image.add("");
@@ -708,15 +716,12 @@ public class InscripcionFragment_NEW extends Fragment {
                 Log.e(TAG,"intentRepeat()");
                 return;
             }
-
             lastTime=Calendar.getInstance().getTimeInMillis();
             intentRepeat=intent.getExtras().toString();
 
             if (intent.getAction().equals(TAG)) {
                 switch (intent.getStringExtra(TAG)) {
                     //Datos personales
-
-                    ///CAMBIOS NUEVOS
                     case ListString.BROACAST_REG_TYPE_VIA:
                         Log.i(TAG,"BROACAST_REG_TYPE_VIA");
                         txtDireccion.setError(null);
@@ -725,17 +730,14 @@ public class InscripcionFragment_NEW extends Fragment {
                     case ListDpto.BROACAST_REG_TYPE_DPTO:
                         //limpiar
                         clearCity();
-
                         Log.i(TAG,"BROACAST_REG_TYPE_DPTO");
                         dptoSelected = new Gson().fromJson(intent.getStringExtra(ListDpto.BROACAST_DATA), Departamento.class);
                         txtSpnDpto.setError(null);
                         txtSpnDpto.setText(dptoSelected.getName_dpto());
                         txtSpnDpto.setTag(dptoSelected.getId_dpto());
                         listCiudad=dptoSelected.getCiudades();
-                        //cityJSON=getJSONCiudad(dptoSelected.getCiudades());
                         break;
                     case ListString.BROACAST_REG_TYPE_CITY:
-                        //limp[iar
                         clearBarrio();
 
                         Log.i(TAG,"BROACAST_REG_TYPE_CITY");
@@ -845,7 +847,6 @@ public class InscripcionFragment_NEW extends Fragment {
                     case BROACAST_INSCRIP_TYPE_IMG_CED_FRONT_URL:
                         Log.i(TAG, "BROACAST_INSCRIP_TYPE_IMG_CED_FRONT_URL");
                         String url0 = intent.getStringExtra(ListString.BROACAST_DATA);
-                        //url_image.add(IMG_CED_FRT, url0);
                         url_image.set(IMG_CED_FRT, url0);
 
                         if(!modeEdit || file1 != null){//en modo edicion si file == null, no se ha modificado y se llama al sigueinet caso
@@ -861,13 +862,11 @@ public class InscripcionFragment_NEW extends Fragment {
                                 new Http(getActivity()).inscribir_NEW(obtainData(), TAG, BROACAST_INSCRIP_SUSSCCEFUL, BROACAST_INSCRIP_ERROR);
                             }
                         }
-                        //sendImageMultiPart(file1,TAG, BROACAST_INSCRIP_TYPE_IMG_CED_ADVER_URL);
                         break;
 
                     case BROACAST_INSCRIP_TYPE_IMG_CED_ADVER_URL:
                         Log.i(TAG, "BROACAST_INSCRIP_TYPE_IMG_CED_ADVER_URL");
                         String url1 = intent.getStringExtra(ListString.BROACAST_DATA);
-                        //url_image.add(IMG_CED_ADV, url1);
                         url_image.set(IMG_CED_ADV, url1);
 
                         if(!modeEdit || file2 != null){//en modo edicion si file == null, no se ha modificado y se llama al sigueinet caso
@@ -885,7 +884,6 @@ public class InscripcionFragment_NEW extends Fragment {
                     case BROACAST_INSCRIP_TYPE_IMG_PAG_FRONT_URL:
                         Log.i(TAG, "BROACAST_INSCRIP_TYPE_IMG_PAG_FRONT_URL");
                         String url2 = intent.getStringExtra(ListString.BROACAST_DATA);
-                        //url_image.add(IMG_PAG_FRT, url2);
                         url_image.set(IMG_PAG_FRT, url2);
 
                         if(!modeEdit || file3 != null) {//en modo edicion si file == null, no se ha modificado y se llama al sigueinet caso
@@ -901,7 +899,6 @@ public class InscripcionFragment_NEW extends Fragment {
                     case BROACAST_INSCRIP_TYPE_IMG_PAG_ADVER_URL:
                         Log.i(TAG, "BROACAST_INSCRIP_TYPE_IMG_PAG_ADVER_URL");
                         String url3 = intent.getStringExtra(ListString.BROACAST_DATA);
-                        //url_image.add(IMG_PAG_ADV, url3);
                         url_image.set(IMG_PAG_ADV, url3);
 
                         if(!modeEdit || file4 != null) {//en modo edicion si file == null, no se ha modificado y se llama al sigueinet caso
@@ -1064,12 +1061,14 @@ public class InscripcionFragment_NEW extends Fragment {
     private void clearAllData_NEW(){
         txtDateBird.setText("");
         txtZone.setText("");
+        txtSector.setText("");
 
         //Direccion residencia
         txtConcatenateDir.setText("");
 
 
         txtDireccion.setText("");
+        txtInterseccion.setText("");
         txtNum1.setText("");
         txtNum2.setText("");
         txtSpnDpto.setText("");
@@ -1079,6 +1078,8 @@ public class InscripcionFragment_NEW extends Fragment {
         //Direccion de envio
         txtSpnDirSend.setText("");
         txtDireccion21.setText("");
+        txtInterseccion2.setText("");
+
         txtSpnDpto_2.setText("");
         txtSpnCity_2.setText("");
         txtSpnBarrio_2.setText("");
@@ -1102,12 +1103,15 @@ public class InscripcionFragment_NEW extends Fragment {
         //habilitando campos debajo
         txtDateBird.setEnabled(refValidated);
         txtZone.setEnabled(refValidated);
+        txtSector.setEnabled(refValidated);
+
 
         //Direccion residencia
         txtConcatenateDir.setEnabled(refValidated);
 
 
         txtDireccion.setEnabled(refValidated);
+        txtInterseccion.setEnabled(refValidated);
         txtNum1.setEnabled(refValidated);
 
         txtNum2.setEnabled(refValidated);
@@ -1118,6 +1122,7 @@ public class InscripcionFragment_NEW extends Fragment {
         //Direccion de envio
         txtSpnDirSend.setEnabled(refValidated);
         txtDireccion21.setEnabled(refValidated);
+        txtInterseccion2.setEnabled(refValidated);
         txtSpnDpto_2.setEnabled(refValidated);
         txtSpnCity_2.setEnabled(refValidated);
         txtSpnBarrio_2.setEnabled(refValidated);
@@ -1165,7 +1170,19 @@ public class InscripcionFragment_NEW extends Fragment {
             valid.setLoginError(getResources().getString(R.string.campo_requerido), txtZone);
             return false;
         }
+        else if (txtSector.getText().toString().isEmpty())
+        {
+            msgToast("Sector... Verifique");
+            valid.setLoginError(getResources().getString(R.string.campo_requerido), txtSector);
+            return false;
+        }
         else if (txtDireccion.getText().toString().isEmpty())
+        {
+            msgToast("Dir. > La direccion no puede ser Vacia... Verifique");
+            valid.setLoginError(getResources().getString(R.string.campo_requerido), txtDireccion);
+            return false;
+        }
+        else if (  txtDireccion.getText().toString().isEmpty())
         {
             msgToast("Dir. > La direccion no puede ser Vacia... Verifique");
             valid.setLoginError(getResources().getString(R.string.campo_requerido), txtDireccion);
@@ -1236,7 +1253,7 @@ public class InscripcionFragment_NEW extends Fragment {
     private boolean validatenew(){
         Validate valid=new Validate();
 
-        if (  isPhoneNumberValid(txtCellphone.getText().toString()))
+        if ( !isPhoneNumberValid(txtCellphone.getText().toString()))
         {
             msgToast("Teléfono movil (8 números)... Verifique");
             valid.setLoginError(getResources().getString(R.string.campo_requerido), txtCellphone);
@@ -1419,6 +1436,7 @@ public class InscripcionFragment_NEW extends Fragment {
         file4=null;
 
         url_image = new ArrayList<>();
+        url_image.add("");
         url_image.add("");
         url_image.add("");
         url_image.add("");
@@ -1723,8 +1741,19 @@ public class InscripcionFragment_NEW extends Fragment {
         requiredInscription.setCedula(txtIdentyCard.getText().toString());
         requiredInscription.setImg_cedula(url_image.subList(0,2));
         requiredInscription.setPagare(url_image.subList(2,4));
+        requiredInscription.setFactura(url_image.subList(4,5));
         requiredInscription.setReferenciado_por(txtIdentyCardRef.getText().toString());
+        requiredInscription.setLatitud(String.valueOf(Lati));
+        requiredInscription.setLongitud(String.valueOf(Longi));
+        requiredInscription.setExactitud(String.valueOf(Acc));
         //requiredInscription.setUser(txtInputNameReferido.getHint()!= null ? txtInputNameReferido.getHint().toString() : "");
+
+//        TelephonyManager telephonyManager = (TelephonyManager) getContext().getSystemService(Context.TELEPHONY_SERVICE);
+//        @SuppressLint("MissingPermission") String aa= telephonyManager.getDeviceId();
+//        requiredInscription.setExactitud(aa);
+
+
+
         requiredInscription.setReferencia(referenciaList);
         Log.i(TAG, "JSON 4"+new Gson().toJson(requiredInscription));
 
@@ -1733,52 +1762,34 @@ public class InscripcionFragment_NEW extends Fragment {
 
     public RequiredInscription_NEW obtainDataUser()
     {
-
+//@@--
         RequiredInscription_NEW dataRegisterModel = new RequiredInscription_NEW(
-                txtIdentyCard.getText().toString(),
-                txtSpnDpto.getText().toString(),
-                //departamento = pickerDpto.SelectedIndex != -1 ? pickerDpto.Items[pickerDpto.SelectedIndex] : "",
-                txtZone.getText().toString(),
-                //zona_seccion = txtZona.Text.Trim(),
-                ciudad.getId_ciudad(),
-                //id_ciudad = dataMainModel.departamentos[pickerDpto.SelectedIndex].ciudades[pickerCity.SelectedIndex].id_ciudad,
-                ciudad.getName_ciudad(),
-                //name_ciudad = dataMainModel.departamentos[pickerDpto.SelectedIndex].ciudades[pickerCity.SelectedIndex].name_ciudad,
-                barrio.getName_barrio(),
-                //barrio = rowSelectedBarrioA.name_barrio,
-                barrio.getId_barrio(),
-                //id_barrio = rowSelectedBarrioA.id_barrio,
-                txtPhone.getText().toString(),
-                //telefono = txtPhone.Text.Trim(),
-                txtCellphone.getText().toString(),
-                //celular = txtCellphone.Text.Trim(),
-                txtEmail.getText().toString(),
-                //correo =  emailValidator.IsValid ? txtEmail.Text.Trim() : "",
+                "",
                 txtDateBird.getText().toString(),
-                //nacimiento = datePickDate.Date.ToString(),
-                "52486488956555",
-                //imei = "52486488956555",
+                txtZone.getText().toString().concat("-").concat(txtSector.getText().toString()),
                 txtDireccion.getText().toString(),
-                txtNum1.getText().toString(),"",
-                txtNum2.getText().toString(),"",
-                "direccion",
-                "numero3",
-                "spin sur",
-                //complemento = (!pickerBehavior_via.SelectedItem.Equals("Otro") ? "" : txtComp.Text.Trim()),
-                txtConcatenateDir.getText().toString(),
-                ctxDirSend.getVisibility()==View.GONE ? "" : concatenateDir_2_Protocol() ,
-                ctxDirSend.getVisibility()==View.GONE ? "" : barrio_2.getId_barrio()
+                txtInterseccion.getText().toString(),
+                txtNum1.getText().toString(),
+                dptoSelected.getId_dpto(),
+                ciudad.getId_ciudad(),
+                ciudad.getName_ciudad(),
+                barrio.getName_barrio(),
+                barrio.getId_barrio(),
+                txtDireccion21.getText().toString(),
+                txtInterseccion.getText().toString(),//change to interseccion envio
+                txtNum2.getText().toString(),
+                ctxDirSend.getVisibility()==View.GONE ? "" : dptoSelected.getId_dpto(),
+                ctxDirSend.getVisibility()==View.GONE ? "" : ciudad_2.getId_ciudad(),
+                ctxDirSend.getVisibility()==View.GONE ? "" : ciudad_2.getName_ciudad(),
+                ctxDirSend.getVisibility()==View.GONE ? "" : barrio_2.getName_barrio(),
+                ctxDirSend.getVisibility()==View.GONE ? "" : barrio_2.getId_barrio(),
+                txtPhone.getText().toString(),
+                txtCellphone.getText().toString(),
+                txtEmail.getText().toString(),
+                "",
+                "",
+                ""
         );
-
-        dataRegisterModel.setDireccion_concatenada(
-                dataRegisterModel.getTipo_via() + " " +
-                        (dataRegisterModel.getNumero1() + " ") +
-                        (dataRegisterModel.getBis() + " ") +
-                        (dataRegisterModel.getNumero2() + " ") +
-                        (dataRegisterModel.getLetra2() + " ") +
-                        (dataRegisterModel.getNumero3() + " ") +
-                        (dataRegisterModel.getPcardinal() + " ") +
-                        dataRegisterModel.getComplemento());
 
         return dataRegisterModel;
     }
@@ -1796,7 +1807,8 @@ public class InscripcionFragment_NEW extends Fragment {
         txtDateBird.setText(data.getNacimiento());
         txtIdentyCardRef.setText(data.getReferenciado_por());
         txtInputNameReferido.setHint(data.getReferenciado_nombre());
-        txtZone.setText(data.getZona_seccion());
+        txtZone.setText(data.getZona_seccion().substring(0,4));
+        txtSector.setText(data.getZona_seccion().substring(4,7));
 
 
         txtPhone.setText(data.getTelefono());
@@ -1816,13 +1828,6 @@ public class InscripcionFragment_NEW extends Fragment {
         //PONE DIRECCION CONCATENADA
         ValidEditDir=true;
         ValidChargeDir=false;
-        if(!data.getDireccion_concatenada().isEmpty()) {
-            Log.e("DIRECCION","IF_____");
-            img_gps.setBackgroundColor(Color.GREEN);
-            txtConcatenateDir.setText(data.getDireccion_concatenada());
-        }
-
-
 
         String dir_envio = data.getDireccion_envio();
         if(!dir_envio.isEmpty()) {
@@ -1871,6 +1876,7 @@ public class InscripcionFragment_NEW extends Fragment {
         img.displayImage(data.getPagare().get(1), imgPagAdverso);
         url_image.add(data.getPagare().get(1));
         setImgPagAdverosON(true);
+
 
 /*------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------
@@ -1988,7 +1994,7 @@ public class InscripcionFragment_NEW extends Fragment {
                     DirGeo=DirCalle.getAddressLine(0);
                     if(Acc<MAXIMUM_ACCURACY_OF_LOCATION_ALLOWED &&  ValidEditDir==true && ValidChargeDir==true){
                         img_gps.setBackgroundColor(Color.GREEN);
-                        txtConcatenateDir.setText(DirGeo);
+                        //txtConcatenateDir.setText(DirGeo);
                     }else{
                         if(Acc<MAXIMUM_ACCURACY_OF_LOCATION_ALLOWED &&  ValidEditDir==true && ValidChargeDir==false){
                             img_gps.setBackgroundColor(Color.GREEN);

@@ -224,7 +224,7 @@ public class MenuActivity extends AppCompatActivity
                 navigationView.getMenu().findItem(R.id.menu_lat_redimir_incentivos).setVisible(false);
                 navigationView.getMenu().findItem(R.id.servicios).setVisible(false);
                 navigationView.getMenu().findItem(R.id.menu_lat_redimir_incentivos).setVisible(false);
-                navigationView.getMenu().findItem(R.id.incorporaciones).setVisible(true);
+                navigationView.getMenu().findItem(R.id.incorporaciones).setVisible(false);
                 onNavigationItemSelected(navigationView.getMenu().findItem(R.id.menu_lat_home_gerentes));
                 navigationView.getMenu().findItem(R.id.menu_lat_seg_pet_quej_rec_pqr).setVisible(false);
                 navigationView.getMenu().findItem(R.id.menu_lat_detalle_factura).setVisible(false);
@@ -245,7 +245,7 @@ public class MenuActivity extends AppCompatActivity
                 navigationView.getMenu().findItem(R.id.menu_lat_redimir_incentivos).setVisible(false);
                 navigationView.getMenu().findItem(R.id.servicios).setVisible(false);
                 navigationView.getMenu().findItem(R.id.menu_lat_redimir_incentivos).setVisible(false);
-                navigationView.getMenu().findItem(R.id.incorporaciones).setVisible(true);
+                navigationView.getMenu().findItem(R.id.incorporaciones).setVisible(false);
                 navigationView.getMenu().findItem(R.id.menu_lat_seg_pet_quej_rec_pqr).setVisible(false);
                 navigationView.getMenu().findItem(R.id.menu_lat_detalle_factura).setVisible(false);
                 onNavigationItemSelected(navigationView.getMenu().findItem(R.id.menu_lat_home_gerentes));
