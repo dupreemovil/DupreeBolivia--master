@@ -67,7 +67,7 @@ public class MH_Dialogs_Input extends DialogFragment {
         input = new EditText(getActivity());
         // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
         //input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-        input.setInputType(InputType.TYPE_CLASS_NUMBER);
+        input.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
         input.setTextSize(22);
         input.setHint(placeHolder);
         builder.setView(input);
