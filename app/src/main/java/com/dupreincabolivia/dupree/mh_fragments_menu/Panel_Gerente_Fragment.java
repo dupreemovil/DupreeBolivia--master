@@ -194,24 +194,6 @@ public class Panel_Gerente_Fragment extends Fragment {
         return respose;
     }
 
-
-    /*
-    public List<PanelGteDetail> getPanel(){
-        List<PanelGteDetail> respose = new ArrayList<>();
-
-        respose.add(new PanelGteDetail("VENTA TOTAL","8591453","11.37%","faro_rojo.png"));
-        respose.add(new PanelGteDetail("% CARTERA 21D","10618975","100%","faro_verde.png"));
-        respose.add(new PanelGteDetail("% CARTERA 31D","10618975","100%","faro_rojo.png"));
-        respose.add(new PanelGteDetail("PEDIDOS","37","9.46%","faro_rojo.png"));
-        respose.add(new PanelGteDetail("INGRESOS","0","0%","faro_rojo.png"));
-        respose.add(new PanelGteDetail("REINGRESOS","0","0%","faro_verde.png"));
-        respose.add(new PanelGteDetail("% CONSECUTIVIDAD","82% Estimado","7.75%","faro_rojo.png"));
-        respose.add(new PanelGteDetail(" %FALTANTE REAL","336539","3.92%","faro_verde.png"));
-
-        return respose;
-    }
-    */
-
     @Override
     public void onResume() {
         super.onResume();

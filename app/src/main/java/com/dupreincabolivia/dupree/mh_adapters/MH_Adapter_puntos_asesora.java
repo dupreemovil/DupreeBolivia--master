@@ -47,18 +47,18 @@ public class MH_Adapter_puntos_asesora extends RecyclerView.Adapter<MH_Adapter_p
 
         holder.tvCamp.setText("".concat(String.valueOf(listFilter.get(position).getCampana())));
         holder.tvPedido.setText("".concat(String.valueOf(listFilter.get(position).getPuntos_Pedido())));
-        holder.tvReferidos.setText("".concat(listFilter.get(position).getPuntos_Referido()));
-        holder.tvPtsReferido.setText("".concat(String.valueOf(listFilter.get(position).getTotal_Referidos())));//
+        //holder.tvReferidos.setText("".concat(listFilter.get(position).getPuntos_Referido()));
+        //holder.tvPtsReferido.setText("".concat(String.valueOf(listFilter.get(position).getTotal_Referidos())));//
         holder.tvTotal.setText("".concat(String.valueOf(listFilter.get(position).getTotal_Puntos())));//
-        holder.tvDevolucion.setText("".concat(listFilter.get(position).getPerdidos_Devolucion()));
-        holder.tvCartera.setText("".concat(String.valueOf(listFilter.get(position).getPerdidos_Cartera())));
-        holder.tvInactividad.setText("".concat(String.valueOf(listFilter.get(position).getPerdidos_Inactividad())));
+        //holder.tvDevolucion.setText("".concat(listFilter.get(position).getPerdidos_Devolucion()));
+        //holder.tvCartera.setText("".concat(String.valueOf(listFilter.get(position).getPerdidos_Cartera())));
+        //holder.tvInactividad.setText("".concat(String.valueOf(listFilter.get(position).getPerdidos_Inactividad())));
         holder.tvPerdidos.setText("".concat(listFilter.get(position).getPuntos_Pedido()));
-        holder.tvAdicionales.setText("".concat(String.valueOf(listFilter.get(position).getPuntos_Adicionales())));
+        //holder.tvAdicionales.setText("".concat(String.valueOf(listFilter.get(position).getPuntos_Adicionales())));
 
-        holder.tvEfectivos.setText("".concat(String.valueOf(listFilter.get(position).getPuntos_Efectivos())));
-        holder.tvRedimidos.setText("".concat(listFilter.get(position).getPuntos_Redimidos()));
-        holder.tvPago.setText("".concat(String.valueOf(listFilter.get(position).getEstado_Pago())));
+        //holder.tvEfectivos.setText("".concat(String.valueOf(listFilter.get(position).getPuntos_Efectivos())));
+        //holder.tvRedimidos.setText("".concat(listFilter.get(position).getPuntos_Redimidos()));
+        //holder.tvPago.setText("".concat(String.valueOf(listFilter.get(position).getEstado_Pago())));
 
         //holder.cardViewBackGround.setBackgroundResource(R.color.transp_Accent);
 
@@ -87,17 +87,17 @@ public class MH_Adapter_puntos_asesora extends RecyclerView.Adapter<MH_Adapter_p
 
             tvCamp = (TextView) v.findViewById(R.id.tvCamp);
             tvPedido = (TextView) v.findViewById(R.id.tvPedido);
-            tvReferidos = (TextView) v.findViewById(R.id.tvReferidos);
-            tvPtsReferido = (TextView) v.findViewById(R.id.tvPtsReferido);
+            //tvReferidos = (TextView) v.findViewById(R.id.tvReferidos);
+            //tvPtsReferido = (TextView) v.findViewById(R.id.tvPtsReferido);
             tvTotal = (TextView) v.findViewById(R.id.tvTotal);
-            tvDevolucion = (TextView) v.findViewById(R.id.tvDevolucion);
-            tvCartera = (TextView) v.findViewById(R.id.tvCartera);
-            tvInactividad = (TextView) v.findViewById(R.id.tvInactividad);
+            //tvDevolucion = (TextView) v.findViewById(R.id.tvDevolucion);
+            //tvCartera = (TextView) v.findViewById(R.id.tvCartera);
+            //tvInactividad = (TextView) v.findViewById(R.id.tvInactividad);
             tvPerdidos = (TextView) v.findViewById(R.id.tvPerdidos);
-            tvAdicionales = (TextView) v.findViewById(R.id.tvAdicionales);
+            //tvAdicionales = (TextView) v.findViewById(R.id.tvAdicionales);
 
-            tvEfectivos = (TextView) v.findViewById(R.id.tvEfectivos);
-            tvRedimidos = (TextView) v.findViewById(R.id.tvRedimidos);
+            //tvEfectivos = (TextView) v.findViewById(R.id.tvEfectivos);
+            //tvRedimidos = (TextView) v.findViewById(R.id.tvRedimidos);
             tvPago = (TextView) v.findViewById(R.id.tvPago);
 
             cardViewBackGround = (CardView) v.findViewById(R.id.cardViewBackGround);
