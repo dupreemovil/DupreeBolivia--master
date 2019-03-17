@@ -348,7 +348,7 @@ public class MenuActivity extends AppCompatActivity
 
         // Configura el editext de busqueda
         txtSearchSUgerencias = ((EditText) searchView.findViewById (android.support.v7.appcompat.R.id.search_src_text));
-        txtSearchSUgerencias.setInputType(InputType.TYPE_CLASS_NUMBER);
+        txtSearchSUgerencias.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
         //txtSearchSUgerencias.setTextSize(16);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             // Evento, se solicita realizar la búsqueda pulsando el botón “Enter” del teclado (o lupa)
