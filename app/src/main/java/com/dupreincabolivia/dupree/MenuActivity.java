@@ -195,6 +195,7 @@ public class MenuActivity extends AppCompatActivity
             case Perfil.ADESORA:
                 navigationView.getMenu().findItem(R.id.menu_lat_home_asesoras).setVisible(true);
                 navigationView.getMenu().findItem(R.id.menu_lat_home_gerentes).setVisible(false);
+                navigationView.getMenu().findItem(R.id.menu_lat_bandeja_entrada).setVisible(false);
                 navigationView.getMenu().findItem(R.id.menu_lat_redimir_incentivos).setVisible(true);
                 navigationView.getMenu().findItem(R.id.menu_lat_cupo_saldo_conf).setVisible(true);
                 navigationView.getMenu().findItem(R.id.menu_lat_pedidos_ret).setVisible(false);
@@ -215,6 +216,7 @@ public class MenuActivity extends AppCompatActivity
             case Perfil.LIDER:
                 navigationView.getMenu().findItem(R.id.menu_lat_home_asesoras).setVisible(false);
                 navigationView.getMenu().findItem(R.id.menu_lat_home_gerentes).setVisible(true);
+                navigationView.getMenu().findItem(R.id.menu_lat_bandeja_entrada).setVisible(false);
                 navigationView.getMenu().findItem(R.id.menu_lat_cupo_saldo_conf).setVisible(true);
                 navigationView.getMenu().findItem(R.id.menu_lat_pedidos_ret).setVisible(true);
                 navigationView.getMenu().findItem(R.id.menu_lat_edo_pedido).setVisible(false);
@@ -236,6 +238,7 @@ public class MenuActivity extends AppCompatActivity
             case Perfil.GERENTE_REGION:
                 navigationView.getMenu().findItem(R.id.menu_lat_home_asesoras).setVisible(false);
                 navigationView.getMenu().findItem(R.id.menu_lat_home_gerentes).setVisible(true);
+                navigationView.getMenu().findItem(R.id.menu_lat_bandeja_entrada).setVisible(false);
                 navigationView.getMenu().findItem(R.id.menu_lat_cupo_saldo_conf).setVisible(true);
                 navigationView.getMenu().findItem(R.id.menu_lat_pedidos_ret).setVisible(true);
                 navigationView.getMenu().findItem(R.id.menu_lat_edo_pedido).setVisible(false);
