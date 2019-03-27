@@ -175,11 +175,11 @@
     <string name="redimir_incentivos">Redimir incentivos</string>
     <string name="incentivos_por_referido">Incentivos por referido</string>
     <string name="reportes">Reportes</string>
-    <string name="canjes_y_devoluciones_cdr">Canjes y Reclamos (CDR)</string>
+    <string name="canjes_y_devoluciones_cdr">Cambios y Reclamos</string>
     <string name="seguimiento_peticiones_quejas_y_reclamos_pqr">Seguimiento, peticiones, quejas y reclamos (PQR)</string>
     <string name="detalle_factura_pdf">Detalle factura (.PDF)</string>
     <string name="pagos_realizados">Pagos realizados</string>
-    <string name="cupo_saldo_y_conferencia_asesora">Cupo, saldo y conferencia asesora</string>
+    <string name="cupo_saldo_y_conferencia_asesora">Cupo, saldo y Reuniones</string>
     <string name="pedidos_retenidos">Pedidos retenidos</string>
     <string name="servicios">Servicios</string>
     <string name="peticiones_quejas_y_reclamos_pqr">Peticiones, quejas y reclamos (PQR)</string>
