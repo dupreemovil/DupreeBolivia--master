@@ -45,7 +45,10 @@ public class MH_Adapter_PanelGte extends RecyclerView.Adapter<MH_Adapter_PanelGt
     Boolean blockEventsAutomatic=false;
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.tvNameCamp.setText(summaryGte.get(position).getCampana());
+        String holderName=summaryGte.get(position).getCampana();
+        if (holderName.equals("RETENCION"))
+            holderName="% ".concat(holderName);
+        holder.tvNameCamp.setText(holderName);
         holder.tvCantidad.setText("".concat(summaryGte.get(position).getCantidad()));
 
         String porcent = summaryGte.get(position).getPorcentaje();//quita el simbolo de "%"
