@@ -53,7 +53,7 @@ public class MH_Adapter_puntos_asesora extends RecyclerView.Adapter<MH_Adapter_p
         //holder.tvDevolucion.setText("".concat(listFilter.get(position).getPerdidos_Devolucion()));
         //holder.tvCartera.setText("".concat(String.valueOf(listFilter.get(position).getPerdidos_Cartera())));
         //holder.tvInactividad.setText("".concat(String.valueOf(listFilter.get(position).getPerdidos_Inactividad())));
-        holder.tvPerdidos.setText("".concat(listFilter.get(position).getPuntos_Pedido()));
+        holder.tvPerdidos.setText("".concat(listFilter.get(position).getPerdidos_Cartera()));
         //holder.tvAdicionales.setText("".concat(String.valueOf(listFilter.get(position).getPuntos_Adicionales())));
 
         //holder.tvEfectivos.setText("".concat(String.valueOf(listFilter.get(position).getPuntos_Efectivos())));
