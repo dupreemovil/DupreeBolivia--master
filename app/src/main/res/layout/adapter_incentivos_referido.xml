@@ -164,7 +164,7 @@
                             android:textStyle="normal"
                             android:textSize="14sp"
                             android:textColor="@color/azulDupree"
-                            android:text="SALDO:"/>
+                            android:text="PREMIO:"/>
                         <TextView
                             android:id="@+id/tvSakdo"
                             android:layout_width="match_parent"
