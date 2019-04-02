@@ -48,6 +48,7 @@ import com.dupreincabolivia.dupree.mh_fragments_menu.Config_ModPerfil_Fragment;
 import com.dupreincabolivia.dupree.mh_fragments_menu.Incentivos_ConsultaPtos_Fragment;
 import com.dupreincabolivia.dupree.mh_fragments_menu.Incentivos_Redimir_Fragment;
 import com.dupreincabolivia.dupree.mh_fragments_menu.Incentivos_Referido_Fragment;
+import com.dupreincabolivia.dupree.mh_fragments_menu.Pedidos_Digitados_Fragment;
 import com.dupreincabolivia.dupree.mh_fragments_menu.Incorp_Todos_Fragment;
 import com.dupreincabolivia.dupree.mh_fragments_menu.Panel_Asesora_Fragment;
 import com.dupreincabolivia.dupree.mh_fragments_menu.Panel_Gerente_Fragment;
@@ -437,6 +438,7 @@ public class MenuActivity extends AppCompatActivity
             }
         } catch (ClassCastException e){
             //en caso que la clase no sea
+            Log.e("myFragmentCSC to: ", "No es el 1 del onclik");
         }
 
         try {
@@ -449,6 +451,7 @@ public class MenuActivity extends AppCompatActivity
             }
         } catch (ClassCastException e){
             //en caso que la clase no sea
+            Log.e("myFragmentCSC to: ", "No es el 2 del onclik");
         }
 
         try {
@@ -461,6 +464,7 @@ public class MenuActivity extends AppCompatActivity
             }
         } catch (ClassCastException e){
             //en caso que la clase no sea
+            Log.e("myFragmentCSC to: ", "No es el 3 del onclik");
         }
 
         try {
@@ -473,6 +477,7 @@ public class MenuActivity extends AppCompatActivity
             }
         } catch (ClassCastException e){
             //en caso que la clase no sea
+            Log.e("myFragmentCSC to: ", "No es el 4 del onclik");
         }
 
         try {
@@ -485,6 +490,7 @@ public class MenuActivity extends AppCompatActivity
             }
         } catch (ClassCastException e){
             //en caso que la clase no sea
+            Log.e("myFragmentCSC to: ", "No es el 5 del onclik");
         }
 
         try {
@@ -497,6 +503,7 @@ public class MenuActivity extends AppCompatActivity
             }
         } catch (ClassCastException e){
             //en caso que la clase no sea
+            Log.e("myFragmentCSC to: ", "No es el 6 del onclik");
         }
 
         try {
@@ -509,6 +516,7 @@ public class MenuActivity extends AppCompatActivity
             }
         } catch (ClassCastException e){
             //en caso que la clase no sea
+            Log.e("myFragmentCSC to: ", "No es el 7 del onclik");
         }
 
         try {
@@ -521,6 +529,7 @@ public class MenuActivity extends AppCompatActivity
             }
         } catch (ClassCastException e){
             //en caso que la clase no sea
+            Log.e("myFragmentCSC to: ", "No es el 8 del onclik");
         }
 
         try {
@@ -756,6 +765,12 @@ public class MenuActivity extends AppCompatActivity
                 enableSearch(!perfil.getPerfil().equals(Perfil.ADESORA),false,false,getString(R.string.cedula_asesora));
                 fragmentoGenerico = new Incentivos_Referido_Fragment();
                 ((Incentivos_Referido_Fragment)fragmentoGenerico).loadData(perfil);
+                break;
+            //LISTO PARA PRUEBAS ( TODOS - GERENTE BUSCAR ASESORA )
+            case R.id.menu_lat_pedid_digitado:
+                enableSearch(!perfil.getPerfil().equals(Perfil.ADESORA),false,false,getString(R.string.cedula_asesora));
+                fragmentoGenerico = new Pedidos_Digitados_Fragment();
+                ((Pedidos_Digitados_Fragment)fragmentoGenerico).loadData(perfil);
                 break;
             //LISTO PARA PRUEBAS ( TODOS - GERENTE BUSCAR ASESORA )
             case R.id.menu_lat_canjes_dev:

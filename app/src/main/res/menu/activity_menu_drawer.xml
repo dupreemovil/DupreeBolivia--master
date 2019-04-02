@@ -89,6 +89,10 @@
         <item android:title="@string/reportes">
             <menu>
                 <item
+                    android:id="@+id/menu_lat_pedid_digitado"
+                    android:icon="@drawable/ic_list_white_24dp"
+                    android:title="@string/pedidos_digitados" />
+                <item
                     android:id="@+id/menu_lat_canjes_dev"
                     android:icon="@drawable/ic_restore_white_24dp"
                     android:title="@string/canjes_y_devoluciones_cdr" />

@@ -17,7 +17,8 @@ import com.dupreincabolivia.dupree.R;
 
 import com.dupreincabolivia.dupree.mh_required_api.RequiredApprovePreIns;
 import com.dupreincabolivia.dupree.mh_required_api.RequiredConfirmaPedido;
-import com.dupreincabolivia.dupree.mh_required_api.RequiredIdMessaage;
+import com.dupreincabolivia.dupree.mh_required_api.RequiredNumeLide;
+
 import com.dupreincabolivia.dupree.mh_required_api.RequiredIndex;
 import com.dupreincabolivia.dupree.mh_required_api.RequiredInscription_NEW;
 import com.dupreincabolivia.dupree.mh_required_api.RequiredRefreshToken;
@@ -30,6 +31,7 @@ import com.dupreincabolivia.dupree.mh_response_api.RequiredLiquidar;
 import com.dupreincabolivia.dupree.mh_response_api.RequiredRedimirPremios;
 import com.dupreincabolivia.dupree.mh_response_api.ResponseBandeja;
 import com.dupreincabolivia.dupree.mh_response_api.ResponseCDR;
+import com.dupreincabolivia.dupree.mh_response_api.ResponsePedidosDigitados;
 import com.dupreincabolivia.dupree.mh_response_api.ResponseCampana;
 import com.dupreincabolivia.dupree.mh_response_api.ResponseCupoSaldoConf;
 import com.dupreincabolivia.dupree.mh_response_api.ResponseEstadoPedido;
@@ -41,6 +43,7 @@ import com.dupreincabolivia.dupree.mh_response_api.ResponsePQR;
 import com.dupreincabolivia.dupree.mh_response_api.ResponsePagos;
 import com.dupreincabolivia.dupree.mh_response_api.ResponsePanelAsesora;
 import com.dupreincabolivia.dupree.mh_response_api.ResponsePanelGte;
+import com.dupreincabolivia.dupree.mh_response_api.ResponsePedidosDigitados;
 import com.dupreincabolivia.dupree.mh_response_api.ResponsePerfil;
 import com.dupreincabolivia.dupree.mh_response_api.ResponseProd_Catalogo;
 import com.dupreincabolivia.dupree.mh_response_api.ResponsePuntosAsesora;
@@ -2479,6 +2482,73 @@ public class Http {
         });
 
     }
+
+    public void getPedidosDigitados(RequiredNumeLide requiredIdenty, final String tagFragment, final String objectFragment)
+    {
+        final iReport service = retrofit.create(iReport.class);
+
+        Log.e(TAG, "getPedidosDigitados()");
+
+        Log.i(TAG, "@@---" + requiredIdenty.getNume_lide() );
+
+        Call<ResponsePedidosDigitados> call = service.obtainPedidosDigitados(new Gson().toJson(requiredIdenty));
+
+        showDialogWait();
+        call.enqueue(new Callback<ResponsePedidosDigitados>() {
+            @Override
+            public void onResponse(Call<ResponsePedidosDigitados> call, Response<ResponsePedidosDigitados> response) {
+                stopDialogoWait();
+                Log.e(TAG+"onResponse", call.request().url().toString());
+
+                String msgError=null;
+                int code=response.code();
+                Log.e("code", String.valueOf(code) );
+                if(code==200 || code==400 || code==401 || code==404 || code==501) {
+                    if (!response.isSuccessful()) {
+                        try {
+                            String jsonInString = response.errorBody().string();
+                            Log.e(TAG, "Retrofit Response : " + jsonInString);
+                            ResponsePedidosDigitados resp = new Gson().fromJson(jsonInString, ResponsePedidosDigitados.class);
+
+                            msgError = resp.getRaise().get(0).getField().concat(". ").concat(resp.getRaise().get(0).getError());
+                        } catch (IOException e) {
+                            msgError = myContext.getResources().getString(R.string.http_error_desconocido);
+                        }
+                    } else {
+                        Log.e(TAG + "JSON response", ": " + new Gson().toJson(response.body()));
+                        //((MenuActivity) myContext).responseHttpCampana(response.body().getCampanaList());
+                        if (response.body().getCode() == 404) {//un detalle envia 200 con error 404
+                            msgError = response.body().getRaise().get(0).getField().concat(". ").concat(response.body().getRaise().get(0).getError());
+                        } else {
+                            publishResultRegister(tagFragment, objectFragment, new Gson().toJson(response.body()));
+                        }
+                    }
+                } else {
+                    msgError = myContext.getResources().getString(R.string.http_error_desconocido);
+                }
+
+                if(msgError!=null) {
+                    msgToast(msgError);
+                    if(code==501){
+                        gotoMain();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponsePedidosDigitados> call, Throwable t) {
+                stopDialogoWait();
+                if(checkIdDataMovileAvailable(call.request().url().toString(), t)){
+                    msgToast(myContext.getResources().getString(R.string.http_error_desconocido));
+                }
+            }
+        });
+
+    }
+
+
+
+
 
     public void getCDR(RequiredIdenty requiredIdenty, final String tagFragment, final String objectFragment)
     {

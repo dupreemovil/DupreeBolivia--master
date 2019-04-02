@@ -14,6 +14,7 @@ import com.dupreincabolivia.dupree.mh_response_api.ResponseListPreinscripcion;
 import com.dupreincabolivia.dupree.mh_response_api.ResponsePQR;
 import com.dupreincabolivia.dupree.mh_response_api.ResponsePagos;
 import com.dupreincabolivia.dupree.mh_response_api.ResponsePanelGte;
+import com.dupreincabolivia.dupree.mh_response_api.ResponsePedidosDigitados;
 import com.dupreincabolivia.dupree.mh_response_api.ResponsePerfil;
 import com.dupreincabolivia.dupree.mh_response_api.ResponseProd_Catalogo;
 import com.dupreincabolivia.dupree.mh_response_api.ResponsePuntosAsesora;
@@ -107,6 +108,10 @@ public interface iReport {
     Call<ResponseReferidos> obtainIncentivosReferido(
             @Query("filters") String jsonCedula, @Query("paginator") String pag
     );
+
+    @FormUrlEncoded
+    @POST("reportes/pe_lider")
+        Call<ResponsePedidosDigitados> obtainPedidosDigitados(@Field("Params") String jsonCedula);
 
     @GET("reportes/cdr")
     Call<ResponseCDR> obtainCDR(
