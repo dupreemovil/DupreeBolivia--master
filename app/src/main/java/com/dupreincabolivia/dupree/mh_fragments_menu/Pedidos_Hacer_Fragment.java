@@ -539,7 +539,6 @@ public class Pedidos_Hacer_Fragment extends Fragment {
                 return;
             }*/
             intentRepeat=intent.getExtras().toString();
-
             if (intent.getAction().equals(TAG)) {
                 switch (intent.getStringExtra(TAG)) {//pregunta cual elemento envio este broadcast
                     case BROACAST_EDO_PEDIDO_OBTAIN:
@@ -595,7 +594,7 @@ public class Pedidos_Hacer_Fragment extends Fragment {
                             ResponseLiquida responseLiquida = new Gson().fromJson(jsonLiquidate, ResponseLiquida.class);
                             if(responseLiquida.getCodigo()!=null && responseLiquida.getCodigo().equals(Http.CODE_OK)){
                                 NumberFormat formatter = NumberFormat.getInstance(Locale.US);
-                                ((MenuActivity) getActivity()).snackBar
+                                ((MenuActivity) getActivity()).snackBarOK
                                         (
                                                 "Total: "
                                                         .concat("Bs.".concat(formatter.format(Float.parseFloat(responseLiquida.getTotal_pedido()))))
@@ -838,6 +837,18 @@ public class Pedidos_Hacer_Fragment extends Fragment {
         Snackbar.make(fabSendPedido, msg, Snackbar.LENGTH_LONG)
                 .setAction("Action", null).setDuration(15000).show();
     }
+    public void snackBarOK(String msg){
+        Snackbar.make(fabSendPedido, msg, Snackbar.LENGTH_INDEFINITE)
+                .setAction("OK",
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                            }
+                        }
+                        ).show();
+    }
+
+
     ///////////CONTROL DEL FILTRO DE PEDIDOS////////////
 
     @Override

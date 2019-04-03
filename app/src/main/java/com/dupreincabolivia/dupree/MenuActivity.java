@@ -1329,4 +1329,19 @@ public class MenuActivity extends AppCompatActivity
         /*Snackbar.make(navigationView, msg, Snackbar.LENGTH_LONG)
                 .setAction("Action", null).setDuration(5000).show();*/
     }
+
+    public void snackBarOK(String msg){
+        try {
+            Pedidos_Hacer_Fragment myFragmentHacerPedidos = (Pedidos_Hacer_Fragment) fragmentoGenerico;
+            if (myFragmentHacerPedidos != null && myFragmentHacerPedidos.isVisible()) {
+                // add your code here
+                Log.e("snackBarOK to: ", msg);
+                myFragmentHacerPedidos.snackBarOK(msg);
+                return;
+            }
+        } catch (ClassCastException e){
+            //en caso que la clase no sea
+        }
+    }
+
 }
