@@ -117,6 +117,10 @@ public class Incentivos_ConsultaPtos_Fragment extends Fragment {
 
         NumberFormat formatter = NumberFormat.getInstance(Locale.US);
 
+        ptsEfectivos.setVisibility(View.INVISIBLE);
+        ptsRedimidos.setVisibility(View.INVISIBLE);
+        ptsDisponibles.setVisibility(View.INVISIBLE);
+        ptsPendientes.setVisibility(View.INVISIBLE);
         ptsEfectivos.setText("Efectivos: ".concat(formatter.format(listaPuntos.getResume().getEfectivos())));
         ptsRedimidos.setText("Redimidos: ".concat(formatter.format(listaPuntos.getResume().getRedimidos())));
         ptsDisponibles.setText("Disponibles: ".concat(formatter.format(listaPuntos.getResume().getDisponibles())));
