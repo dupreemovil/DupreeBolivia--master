@@ -28,41 +28,7 @@
             android:layout_height="wrap_content"
             android:weightSum="1">
 
-            <android.support.v7.widget.CardView
-                android:layout_margin="0.5dp"
-                card_view:cardCornerRadius="6dp"
-                card_view:cardElevation="10dp"
-                card_view:cardUseCompatPadding="true"
-                android:layout_weight="0.2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_margin="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="start"
-                        android:textStyle="normal"
-                        android:textSize="14sp"
-                        android:textColor="@color/azulDupree"
-                        android:text="CÓD.:"/>
-
-                    <TextView
-                        android:id="@+id/tvCode"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:textStyle="normal"
-                        android:textSize="14sp"
-                        android:textColor="@color/gray_6"
-                        android:text="201618"/>
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
                 android:layout_margin="0.5dp"
@@ -70,7 +36,7 @@
                 card_view:cardElevation="10dp"
                 card_view:cardUseCompatPadding="true"
                 android:layout_width="0dp"
-                android:layout_weight="0.6"
+                android:layout_weight="0.8"
                 android:layout_height="match_parent">
 
                 <LinearLayout

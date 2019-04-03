@@ -47,7 +47,7 @@ public class MH_Adapter_Faltantes extends RecyclerView.Adapter<MH_Adapter_Faltan
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.tvCode.setText("".concat(String.valueOf(listFilter.get(position).getId())));
+
         try{
             holder.tvName.setText("".concat(listFilter.get(position).getNombre()));
         }catch (Exception e){}
@@ -63,7 +63,7 @@ public class MH_Adapter_Faltantes extends RecyclerView.Adapter<MH_Adapter_Faltan
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
-        private TextView tvCode, tvName, tvPage;
+        private TextView  tvName, tvPage;
         //private ImageView imgB_Call;
         private CardView cardViewBackGround;
 
@@ -75,7 +75,7 @@ public class MH_Adapter_Faltantes extends RecyclerView.Adapter<MH_Adapter_Faltan
             //v.setOnLongClickListener(this);
             //v.setOnCreateContextMenuListener(this);
 
-            tvCode = (TextView) v.findViewById(R.id.tvCode);
+
             tvName = (TextView) v.findViewById(R.id.tvName);
             tvPage = (TextView) v.findViewById(R.id.tvPage);
 
