@@ -201,6 +201,7 @@ public class MenuActivity extends AppCompatActivity
                 navigationView.getMenu().findItem(R.id.menu_lat_cupo_saldo_conf).setVisible(true);
                 navigationView.getMenu().findItem(R.id.menu_lat_pedidos_ret).setVisible(false);
                 navigationView.getMenu().findItem(R.id.menu_lat_edo_pedido).setVisible(false);
+                navigationView.getMenu().findItem(R.id.menu_lat_pedid_digitado).setVisible(false);
 
                 //Cambios Realizados Sergio
                 navigationView.getMenu().findItem(R.id.menu_lat_redimir_incentivos).setVisible(false);
@@ -222,6 +223,7 @@ public class MenuActivity extends AppCompatActivity
                 navigationView.getMenu().findItem(R.id.menu_lat_pedidos_ret).setVisible(true);
                 navigationView.getMenu().findItem(R.id.menu_lat_edo_pedido).setVisible(false);
                 navigationView.getMenu().findItem(R.id.servicios).setVisible(false);
+                navigationView.getMenu().findItem(R.id.menu_lat_pedid_digitado).setVisible(true);
 
                 //Cambios Realizados Sergio
                 navigationView.getMenu().findItem(R.id.menu_lat_redimir_incentivos).setVisible(false);
@@ -244,6 +246,7 @@ public class MenuActivity extends AppCompatActivity
                 navigationView.getMenu().findItem(R.id.menu_lat_pedidos_ret).setVisible(true);
                 navigationView.getMenu().findItem(R.id.menu_lat_edo_pedido).setVisible(false);
                 navigationView.getMenu().findItem(R.id.servicios).setVisible(false);
+                navigationView.getMenu().findItem(R.id.menu_lat_pedid_digitado).setVisible(true);
 
                 //Cambios Realizados Sergio
                 navigationView.getMenu().findItem(R.id.menu_lat_redimir_incentivos).setVisible(false);
