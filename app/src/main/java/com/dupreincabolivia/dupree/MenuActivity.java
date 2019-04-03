@@ -768,7 +768,7 @@ public class MenuActivity extends AppCompatActivity
                 break;
             //LISTO PARA PRUEBAS ( TODOS - GERENTE BUSCAR ASESORA )
             case R.id.menu_lat_pedid_digitado:
-                enableSearch(!perfil.getPerfil().equals(Perfil.ADESORA),false,false,getString(R.string.cedula_asesora));
+                enableSearch(false,false,false,getString(R.string.cedula_asesora));
                 fragmentoGenerico = new Pedidos_Digitados_Fragment();
                 ((Pedidos_Digitados_Fragment)fragmentoGenerico).loadData(perfil);
                 break;
@@ -804,7 +804,7 @@ public class MenuActivity extends AppCompatActivity
                 break;
             case R.id.menu_lat_pedidos_ret:
                 //LISTO PARA PRUEBAS ( SOLO GERENTE )
-                enableSearch(!perfil.getPerfil().equals(Perfil.ADESORA),false,false,getString(R.string.cedula_asesora));
+                enableSearch(false,false,false,getString(R.string.cedula_asesora));
                 fragmentoGenerico = new Reporte_Retenidos_Fragment();
                 break;
             case R.id.menu_lat_pet_quej_rec_pqr:
