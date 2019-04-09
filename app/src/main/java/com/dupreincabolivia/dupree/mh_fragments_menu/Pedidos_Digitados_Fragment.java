@@ -87,7 +87,7 @@ public class Pedidos_Digitados_Fragment extends Fragment {
     private void checkPedidosDigitados(){
         if(perfil != null){
             if(!perfil.getPerfil().equals(Perfil.ADESORA)){
-                new Http(getActivity()).getPedidosDigitados(new RequiredNumeLide("6982799"), TAG, BROACAST_PEDIDOS_DIGITADOS);
+                new Http(getActivity()).getPedidosDigitados(new RequiredNumeLide(perfil.getValor()), TAG, BROACAST_PEDIDOS_DIGITADOS);
             }
         }
     }
