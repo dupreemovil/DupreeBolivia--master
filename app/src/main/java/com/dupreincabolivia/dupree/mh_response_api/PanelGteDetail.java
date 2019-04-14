@@ -27,6 +27,10 @@ public class PanelGteDetail {
         return cantidad;
     }
 
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
+    }
+
     public String getPorcentaje() {
         return porcentaje;
     }

@@ -141,6 +141,27 @@ public class Panel_Gerente_Fragment extends Fragment {
         return new Gson().fromJson(data, listType);
     }
 
+    private void modifyNetSales(){
+        String faltante="";
+        for(PanelGteDetail panel : panelGteDetails){
+            if (panel.getCampana().equals(" %FALTANTE REAL"))
+            {
+                faltante=panel.getCantidad();
+            }
+        }
+
+
+        for(PanelGteDetail panel : panelGteDetails){
+            if (panel.getCampana().equals("VENTA TOTAL"))
+            {
+                Double netSales= Double.parseDouble( panel.getCantidad()) - Double.parseDouble(faltante);
+                panel.setCantidad(String.valueOf(netSales));
+            }
+        }
+
+    }
+
+
     private void addDetailCampana(String jsonDetailCampana){
         ResponsePanelGte responsePanelGte = new Gson().fromJson(jsonDetailCampana, ResponsePanelGte.class);
 
@@ -149,7 +170,7 @@ public class Panel_Gerente_Fragment extends Fragment {
         if(jsonDetailCampana!=null) {
             //panelGteDetails.addAll(extractListDetailCampana(jsonDetailCampana));
             panelGteDetails.addAll(responsePanelGte.getListDetail().getPanelGteDetails());
-
+            modifyNetSales();
             if(responsePanelGte.getListDetail().getCantidad_mensajes()!=null)
                 fabMessages.setTitle(responsePanelGte.getListDetail().getCantidad_mensajes()+" Mensajes");
 
@@ -166,7 +187,7 @@ public class Panel_Gerente_Fragment extends Fragment {
         }
     }
 
-    private void obtainDetailCamp(String campana){
+    private void obtainDetailCamp(String campana){//@@~~~
         new Http(getActivity()).getDetailCampanas(new RequiredCampana(campana), TAG, BROACAST_GRTE_TYPE_LIST_DETAIL_CAMP_HTTP);
     }
 
