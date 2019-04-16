@@ -56,8 +56,8 @@ public class MH_Adapter_Retenidos extends RecyclerView.Adapter<MH_Adapter_Reteni
         holder.tvCedulaRet.setText("CI:".concat(listFilter.get(position).getCedula()));
 
         holder.tvTelefonoRet.setText("Telef.: ".concat(listFilter.get(position).getCelular()));
-        holder.tvAreaRef.setText("Area: ".concat(listFilter.get(position).getArea()));
-        holder.tvZonaRef.setText("Zona: ".concat(listFilter.get(position).getZona()));
+        holder.tvAreaRef.setText("Sector : ".concat(listFilter.get(position).getArea()));
+        holder.tvZonaRef.setText("Zona : ".concat(listFilter.get(position).getZona()));
         holder.tvCodeRet.setText("".concat(listFilter.get(position).getCode()));
         holder.tvNumPedidosRet.setText("".concat(listFilter.get(position).getNumPedido()));
         holder.tvCarteraRet.setText("".concat(listFilter.get(position).getCartera()));
