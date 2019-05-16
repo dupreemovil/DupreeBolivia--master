@@ -257,7 +257,7 @@ public class MenuActivity extends AppCompatActivity
                 navigationView.getMenu().findItem(R.id.menu_lat_detalle_factura).setVisible(false);
                 onNavigationItemSelected(navigationView.getMenu().findItem(R.id.menu_lat_home_gerentes));
                 navigationView.getMenu().findItem(R.id.menu_lat_cat_premios).setVisible(false);
-                navigationView.getMenu().findItem(R.id.menu_lat_faltantes).setVisible(false);
+                navigationView.getMenu().findItem(R.id.menu_lat_faltantes).setVisible(true);
                 break;
         }
     }
