@@ -154,6 +154,9 @@ public class Panel_Gerente_Fragment extends Fragment {
         for(PanelGteDetail panel : panelGteDetails){
             if (panel.getCampana().equals("VENTA TOTAL"))
             {
+                if (faltante.isEmpty()){
+                    faltante="0";
+                }
                 Double netSales= Double.parseDouble( panel.getCantidad()) - Double.parseDouble(faltante);
                 panel.setCantidad(String.valueOf(netSales));
             }
