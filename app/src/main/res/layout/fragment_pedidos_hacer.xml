@@ -104,7 +104,8 @@
                     android:id="@+id/fabSendPedido"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|end"
+
+                    android:layout_gravity="bottom|center"
                     android:layout_margin="@dimen/fab_margin"
                     app:floating_background_color="@color/colorAccent"
                     app:floating_icon="@drawable/ic_save_white_24dp"
@@ -131,12 +132,12 @@
 
         <LinearLayout
             android:id="@+id/ctcRcvFilter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent_black_45"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:paddingBottom="10dp"
-            android:layout_width="match_parent"
-            android:background="@color/transparent_black_45"
-            android:layout_height="match_parent">
+            android:paddingBottom="10dp">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rcvFilterPedido"

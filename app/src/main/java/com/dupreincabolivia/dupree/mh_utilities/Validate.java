@@ -18,7 +18,7 @@ public class Validate {
 
     public boolean isValidEmail(String email) {
         Pattern pattern = Patterns.EMAIL_ADDRESS;
-        return !pattern.matcher(email).matches();
+        return pattern.matcher(email).matches();
     }
 
 
