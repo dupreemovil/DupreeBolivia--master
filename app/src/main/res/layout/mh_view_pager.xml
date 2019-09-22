@@ -18,6 +18,6 @@
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:paddingBottom="0dp"
-        android:background="@android:color/white"/>
+        android:background="@color/new_amarillo_114C"/>
 
 </android.support.v4.widget.SwipeRefreshLayout>

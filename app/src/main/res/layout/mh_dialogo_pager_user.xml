@@ -12,14 +12,14 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:paddingBottom="0dp"
-        android:background="@android:color/white"/>
+        android:background="@color/new_amarillo_114C"/>
 
     <ImageButton
         android:id="@+id/left_nav"
         android:layout_width="48dp"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical|left"
-        android:background="@color/white"
+        android:background="@color/new_melon_703c"
         android:src="@drawable/ic_keyboard_arrow_left_black_24dp" />
 
     <ImageButton
@@ -27,7 +27,7 @@
         android:layout_width="48dp"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical|right"
-        android:background="@color/white"
+        android:background="@color/new_melon_703c"
         android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
 
 </FrameLayout>
