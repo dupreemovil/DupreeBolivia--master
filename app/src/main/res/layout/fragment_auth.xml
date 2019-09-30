@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     tools:context="com.dupreincabolivia.dupree.mh_fragments_login.AuthFragment">
 
+
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/login_form"
@@ -31,7 +32,8 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textStyle="bold"
-                android:textColor="@color/azulDupree"
+                android:textColor="@color/new_blackc"
+
                 android:text="(INICIAR SESIÓN)"/>
 
             <android.support.design.widget.TextInputLayout
@@ -48,6 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
+                    android:textColorHighlight="@color/new_amarillo_114C"
                     android:hint="Usuario"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -57,6 +60,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 app:passwordToggleEnabled="true">
                 <EditText
                     android:id="@+id/txtPwd"
@@ -66,7 +70,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:hint="Contraseña"/>
+                    android:textColor="@color/editext_selector_color"
+                    android:hint="Contraseña1"/>
             </android.support.design.widget.TextInputLayout>
 
             <Button
@@ -77,7 +82,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/rounded_bottom_background_blue"
-                android:textColor="@color/white"
+                android:textColor="@color/new_blackc"
                 android:text="ENTRAR"/>
 
             <TextView

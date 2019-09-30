@@ -10,7 +10,7 @@
         android:scrollbars="vertical"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:orientation="vertical"
-        android:background="@color/new_amarillo_114C"
+
         android:padding="15dp">
 
         <ImageView
