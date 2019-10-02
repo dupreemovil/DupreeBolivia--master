@@ -57,7 +57,7 @@ public class MH_Adapter_Pagos_Realiz extends RecyclerView.Adapter<MH_Adapter_Pag
         NumberFormat formatter = NumberFormat.getInstance(Locale.US);
         holder.tvValor.setText("Bs/. ".concat(formatter.format(listFilter.get(position).getValor())));
 
-        holder.cardViedPagos.setCardBackgroundColor(position%2!=0 ? mContext.getResources().getColor(R.color.transp_Accent) : mContext.getResources().getColor(R.color.transp_azulDupree));
+        holder.cardViedPagos.setCardBackgroundColor(position%2!=0 ? mContext.getResources().getColor(R.color.new_blackc) : mContext.getResources().getColor(R.color.new_amarillo_114C));
 
     }
 
