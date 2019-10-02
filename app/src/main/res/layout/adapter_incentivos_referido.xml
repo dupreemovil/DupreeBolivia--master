@@ -86,14 +86,15 @@
                         android:layout_margin="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textStyle="normal"
-                            android:textSize="14sp"
+                            android:text="CAMPAÑA:"
                             android:textColor="@color/new_blackc"
-                            android:text="CAMPAÑA:"/>
+                            android:textSize="14sp"
+                            android:textStyle="normal|bold" />
 
                         <TextView
                             android:id="@+id/tvCamp"
@@ -122,14 +123,15 @@
                         android:layout_margin="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textStyle="normal"
-                            android:textSize="14sp"
+                            android:text="CÉDULA:"
                             android:textColor="@color/new_blackc"
-                            android:text="CÉDULA:"/>
+                            android:textSize="14sp"
+                            android:textStyle="normal|bold" />
                         <TextView
                             android:id="@+id/tvCedula"
                             android:layout_width="match_parent"
@@ -157,14 +159,15 @@
                         android:layout_margin="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textStyle="normal"
-                            android:textSize="14sp"
+                            android:text="PREMIO:"
                             android:textColor="@color/new_blackc"
-                            android:text="PREMIO:"/>
+                            android:textSize="14sp"
+                            android:textStyle="normal|bold" />
                         <TextView
                             android:id="@+id/tvSakdo"
                             android:layout_width="match_parent"
@@ -204,10 +207,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textStyle="normal"
-                            android:textSize="14sp"
+                            android:text="OBSERV.: "
                             android:textColor="@color/new_blackc"
-                            android:text="OBSERV.: "/>
+                            android:textSize="14sp"
+                            android:textStyle="normal|bold" />
 
                         <TextView
                             android:id="@+id/tvObserv"
