@@ -51,7 +51,7 @@ public class MH_Adapter_incentivo_referido extends RecyclerView.Adapter<MH_Adapt
         holder.tvSakdo.setText("".concat(String.valueOf(listFilter.get(position).getSaldo())));
         holder.tvObserv.setText("".concat(listFilter.get(position).getObservaciones()));
 
-        holder.cardViewBackGround.setCardBackgroundColor(position%2!=0 ? mContext.getResources().getColor(R.color.transp_Accent) : mContext.getResources().getColor(R.color.transp_azulDupree));
+        holder.cardViewBackGround.setCardBackgroundColor(position%2!=0 ? mContext.getResources().getColor(R.color.new_blackc) : mContext.getResources().getColor(R.color.new_amarillo_114C));
 
     }
 

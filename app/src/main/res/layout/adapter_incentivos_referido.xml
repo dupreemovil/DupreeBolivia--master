@@ -57,7 +57,7 @@
                             android:gravity="center_horizontal"
                             android:textStyle="bold"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
+                            android:textColor="@color/new_blackc"
                             android:textAllCaps="true"
                             android:text="erys yajayra guerrero soto"/>
                     </LinearLayout>
@@ -92,7 +92,7 @@
                             android:gravity="start"
                             android:textStyle="normal"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
+                            android:textColor="@color/new_blackc"
                             android:text="CAMPAÑA:"/>
 
                         <TextView
@@ -128,7 +128,7 @@
                             android:gravity="start"
                             android:textStyle="normal"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
+                            android:textColor="@color/new_blackc"
                             android:text="CÉDULA:"/>
                         <TextView
                             android:id="@+id/tvCedula"
@@ -163,7 +163,7 @@
                             android:gravity="start"
                             android:textStyle="normal"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
+                            android:textColor="@color/new_blackc"
                             android:text="PREMIO:"/>
                         <TextView
                             android:id="@+id/tvSakdo"
@@ -206,7 +206,7 @@
                             android:gravity="start"
                             android:textStyle="normal"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
+                            android:textColor="@color/new_blackc"
                             android:text="OBSERV.: "/>
 
                         <TextView
