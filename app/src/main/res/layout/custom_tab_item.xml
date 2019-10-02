@@ -3,6 +3,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"
-    android:textColor="@color/azulDupree"
+    android:textColor="@color/new_amarillo_114C"
     android:textSize="14sp"
     android:textStyle="bold" />

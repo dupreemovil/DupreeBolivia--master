@@ -50,7 +50,7 @@
                         android:gravity="start"
                         android:textStyle="normal"
                         android:textSize="14sp"
-                        android:textColor="@color/azulDupree"
+                        android:textColor="@color/new_blackc"
                         android:text="PRODUCTO:"/>
                     <TextView
                         android:id="@+id/tvName"
@@ -85,7 +85,7 @@
                         android:gravity="start"
                         android:textStyle="normal"
                         android:textSize="14sp"
-                        android:textColor="@color/azulDupree"
+                        android:textColor="@color/new_blackc"
                         android:text="PÁG.:"/>
                     <TextView
                         android:id="@+id/tvPage"
