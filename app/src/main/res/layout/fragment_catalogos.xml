@@ -56,11 +56,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:background="@color/transp_PrimaryDark"
+                        android:background="@color/new_amarillo_114C_80"
                         android:padding="10dp"
                         android:text="Campaña 12"
                         android:textAlignment="center"
-                        android:textColor="@color/gray_2"
+                        android:textColor="@color/new_blackc"
                         android:textSize="20sp"
                         android:textStyle="bold" />
                 </android.support.v7.widget.CardView>
@@ -69,7 +69,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_weight="0.3"
-                    card_view:cardBackgroundColor="@color/colorPrimaryDark"
+                    card_view:cardBackgroundColor="@color/new_amarillo_114C"
                     card_view:cardCornerRadius="6dp"
                     card_view:cardElevation="10dp"
                     card_view:cardUseCompatPadding="true">
@@ -80,7 +80,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="12"
-                        android:textColor="@color/gray_2"
+                        android:textColor="@color/new_blackc"
                         android:textSize="50sp"
                         android:textStyle="bold|italic" />
                 </android.support.v7.widget.CardView>
@@ -100,7 +100,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_weight="0.3"
-                    card_view:cardBackgroundColor="@color/colorAccent"
+                    card_view:cardBackgroundColor="@color/new_blackc"
                     card_view:cardCornerRadius="6dp"
                     card_view:cardElevation="10dp"
                     card_view:cardUseCompatPadding="true">
@@ -111,7 +111,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="13"
-                        android:textColor="@color/gray_2"
+                        android:textColor="@color/new_amarillo_114C"
                         android:textSize="50sp"
                         android:textStyle="bold|italic" />
                 </android.support.v7.widget.CardView>
@@ -138,11 +138,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:background="@color/transp_Accent"
+                        android:background="@color/new_blackc_80"
                         android:padding="10dp"
                         android:text="Campaña 13"
                         android:textAlignment="center"
-                        android:textColor="@color/gray_2"
+                        android:textColor="@color/new_amarillo_114C"
                         android:textSize="20sp"
                         android:textStyle="bold" />
                 </android.support.v7.widget.CardView>

@@ -81,7 +81,9 @@
 
 
     <color name="new_blackc">#231f20</color>
+    <color name="new_blackc_80">#CC231F20</color>
     <color name="new_amarillo_114C">#fedd3c</color>
+    <color name="new_amarillo_114C_80">#CCFEDD3C</color>
     <color name="new_amarillo_114C_transparente">#8CFEDD3C</color>
     <color name="new_celeste_2985c">#57c0e9</color>
     <color name="new_verde_claro_7487c">#8bdc64</color>
