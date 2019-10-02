@@ -47,14 +47,15 @@
                         android:layout_margin="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textStyle="normal"
+                            android:text="CAMPAÑA:"
+                            android:textColor="@color/new_blackc"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
-                            android:text="CAMPAÑA:"/>
+                            android:textStyle="normal|bold" />
 
                         <TextView
                             android:id="@+id/tvCamp"
@@ -83,14 +84,15 @@
                         android:layout_margin="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textStyle="normal"
+                            android:text="FECHA:"
+                            android:textColor="@color/new_blackc"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
-                            android:text="FECHA:"/>
+                            android:textStyle="normal|bold" />
                         <TextView
                             android:id="@+id/tvFecha"
                             android:layout_width="match_parent"
@@ -118,14 +120,15 @@
                         android:layout_margin="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textStyle="normal"
+                            android:text="FACTURA:"
+                            android:textColor="@color/new_blackc"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
-                            android:text="FACTURA:"/>
+                            android:textStyle="normal|bold" />
                         <TextView
                             android:id="@+id/tvFact"
                             android:layout_width="match_parent"
@@ -161,14 +164,15 @@
                         android:layout_margin="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textStyle="normal"
+                            android:text="PRODUCTO:"
+                            android:textColor="@color/new_blackc"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
-                            android:text="PRODUCTO:"/>
+                            android:textStyle="normal|bold" />
 
                         <TextView
                             android:id="@+id/tvProduct"
@@ -197,14 +201,15 @@
                         android:layout_margin="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textStyle="normal"
+                            android:text="T. RECLAMO:"
+                            android:textColor="@color/new_blackc"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
-                            android:text="T. RECLAMO:"/>
+                            android:textStyle="normal|bold" />
                         <TextView
                             android:id="@+id/tvTReclamo"
                             android:layout_width="match_parent"
@@ -232,14 +237,15 @@
                         android:layout_margin="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textStyle="normal"
+                            android:text="CANTIDAD:"
+                            android:textColor="@color/new_blackc"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
-                            android:text="CANTIDAD:"/>
+                            android:textStyle="normal|bold" />
                         <TextView
                             android:id="@+id/tvCantidad"
                             android:layout_width="match_parent"
@@ -279,10 +285,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textStyle="normal"
+                            android:text="DESCRIPCIÓN: "
+                            android:textColor="@color/new_blackc"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
-                            android:text="DESCRIPCIÓN: "/>
+                            android:textStyle="normal|bold" />
 
                         <TextView
                             android:id="@+id/tvDescrip"
@@ -323,10 +329,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textStyle="normal"
+                            android:text="OBSERV.: "
+                            android:textColor="@color/new_blackc"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
-                            android:text="OBSERV.: "/>
+                            android:textStyle="normal|bold" />
 
                         <TextView
                             android:id="@+id/tvObserv"
@@ -368,10 +374,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textStyle="normal"
+                            android:text="PROCEDE: "
+                            android:textColor="@color/new_blackc"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
-                            android:text="PROCEDE: "/>
+                            android:textStyle="normal|bold" />
 
                         <TextView
                             android:id="@+id/tvProcede"

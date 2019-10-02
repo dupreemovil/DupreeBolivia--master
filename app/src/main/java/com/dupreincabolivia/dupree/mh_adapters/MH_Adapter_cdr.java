@@ -57,7 +57,7 @@ public class MH_Adapter_cdr extends RecyclerView.Adapter<MH_Adapter_cdr.ViewHold
 
         //holder.cardViewBackGround.setBackgroundResource(R.color.transp_Accent);
 
-        holder.cardViewBackGround.setCardBackgroundColor(position%2!=0 ? mContext.getResources().getColor(R.color.transp_Accent) : mContext.getResources().getColor(R.color.transp_azulDupree));
+        holder.cardViewBackGround.setCardBackgroundColor(position%2!=0 ? mContext.getResources().getColor(R.color.new_blackc) : mContext.getResources().getColor(R.color.new_amarillo_114C));
 
     }
 
