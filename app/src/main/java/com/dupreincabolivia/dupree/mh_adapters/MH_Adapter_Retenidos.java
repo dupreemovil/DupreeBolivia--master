@@ -72,7 +72,7 @@ public class MH_Adapter_Retenidos extends RecyclerView.Adapter<MH_Adapter_Reteni
         holder.tvMontoMinRet.setText("".concat(listFilter.get(position).getMontoMinimo()));
         holder.tvTotalPublicoRet.setText("".concat(listFilter.get(position).getTotalPublico()));
 
-        holder.cardViewBackGround.setCardBackgroundColor(position%2!=0 ? mContext.getResources().getColor(R.color.transp_Accent) : mContext.getResources().getColor(R.color.transp_azulDupree));
+        holder.cardViewBackGround.setCardBackgroundColor(position%2!=0 ? mContext.getResources().getColor(R.color.new_coolGrey7) : mContext.getResources().getColor(R.color.new_amarillo_114C));
 
 
     }

@@ -91,21 +91,21 @@ public class MH_Adapter_Catalogo extends RecyclerView.Adapter<MH_Adapter_Catalog
         holder.ctn_IncDecCant.setVisibility(listFilter.get(position).getCantidad()>0 ? View.VISIBLE : View.GONE);
         holder.ctn_AddCart.setVisibility(listFilter.get(position).getCantidad()>0 ? View.GONE : View.VISIBLE);
 
-        holder.imgB_Decrease.setColorFilter(isEnable() ? mContext.getResources().getColor(R.color.azulDupree) :mContext.getResources().getColor(R.color.gray_5),android.graphics.PorterDuff.Mode.MULTIPLY);
-        holder.imgB_Increase.setColorFilter(isEnable() ? mContext.getResources().getColor(R.color.azulDupree) :mContext.getResources().getColor(R.color.gray_5),android.graphics.PorterDuff.Mode.MULTIPLY);
-        holder.imgB_AddCart.setColorFilter(isEnable() ? mContext.getResources().getColor(R.color.azulDupree) :mContext.getResources().getColor(R.color.gray_5),android.graphics.PorterDuff.Mode.MULTIPLY);
-        holder.tvAddCart.setTextColor(isEnable() ? mContext.getResources().getColor(R.color.azulDupree) : mContext.getResources().getColor(R.color.gray_5));
+        holder.imgB_Decrease.setColorFilter(isEnable() ? mContext.getResources().getColor(R.color.new_blackc) :mContext.getResources().getColor(R.color.gray_5),android.graphics.PorterDuff.Mode.MULTIPLY);
+        holder.imgB_Increase.setColorFilter(isEnable() ? mContext.getResources().getColor(R.color.new_blackc) :mContext.getResources().getColor(R.color.gray_5),android.graphics.PorterDuff.Mode.MULTIPLY);
+        holder.imgB_AddCart.setColorFilter(isEnable() ? mContext.getResources().getColor(R.color.new_blackc) :mContext.getResources().getColor(R.color.gray_5),android.graphics.PorterDuff.Mode.MULTIPLY);
+        holder.tvAddCart.setTextColor(isEnable() ? mContext.getResources().getColor(R.color.new_blackc) : mContext.getResources().getColor(R.color.gray_5));
 
         if(listFilter.get(position).getCantidad() == listFilter.get(position).getCantidadServer()) {
             //SON IGUALES, NO HAY CAMBIO
             if(listFilter.get(position).getCantidad()>=1) {// no esta en el server
                 holder.imagen.setImageResource(R.drawable.ic_flor180x180);//no hay cambios
                 holder.tvStatus.setText("");
-                holder.tvStatus.setTextColor(mContext.getResources().getColor(R.color.azulDupree));
+                holder.tvStatus.setTextColor(mContext.getResources().getColor(R.color.new_blackc));
             }else{// si esta en el server pero no hay cambios
                 holder.imagen.setImageResource(R.drawable.ic_flor180x180);//no hay cambior
                 holder.tvStatus.setText("");
-                holder.tvStatus.setTextColor(mContext.getResources().getColor(R.color.azulDupree));
+                holder.tvStatus.setTextColor(mContext.getResources().getColor(R.color.new_blackc));
 
             }
             //holder.tvStatus.setTextColor(mContext.getResources().getColor(R.color.red_1));

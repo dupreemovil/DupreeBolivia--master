@@ -115,10 +115,10 @@ public class MH_Adapter_Offers extends RecyclerView.Adapter<MH_Adapter_Offers.Vi
         //holder.imgB_Increase.setEnabled(isEnable());
         //holder.imgB_AddCart.setEnabled(isEnable());
         //holder.tvAddCart.setEnabled(isEnable());
-        holder.imgB_Decrease.setColorFilter(isEnable() ? mContext.getResources().getColor(R.color.azulDupree) :mContext.getResources().getColor(R.color.gray_5),android.graphics.PorterDuff.Mode.MULTIPLY);
-        holder.imgB_Increase.setColorFilter(isEnable() ? mContext.getResources().getColor(R.color.azulDupree) :mContext.getResources().getColor(R.color.gray_5),android.graphics.PorterDuff.Mode.MULTIPLY);
-        holder.imgB_AddCart.setColorFilter(isEnable() ? mContext.getResources().getColor(R.color.azulDupree) :mContext.getResources().getColor(R.color.gray_5),android.graphics.PorterDuff.Mode.MULTIPLY);
-        holder.tvAddCart.setTextColor(isEnable() ? mContext.getResources().getColor(R.color.azulDupree) : mContext.getResources().getColor(R.color.gray_5));
+        holder.imgB_Decrease.setColorFilter(isEnable() ? mContext.getResources().getColor(R.color.new_blackc) :mContext.getResources().getColor(R.color.gray_5),android.graphics.PorterDuff.Mode.MULTIPLY);
+        holder.imgB_Increase.setColorFilter(isEnable() ? mContext.getResources().getColor(R.color.new_blackc) :mContext.getResources().getColor(R.color.gray_5),android.graphics.PorterDuff.Mode.MULTIPLY);
+        holder.imgB_AddCart.setColorFilter(isEnable() ? mContext.getResources().getColor(R.color.new_blackc) :mContext.getResources().getColor(R.color.gray_5),android.graphics.PorterDuff.Mode.MULTIPLY);
+        holder.tvAddCart.setTextColor(isEnable() ? mContext.getResources().getColor(R.color.new_blackc) : mContext.getResources().getColor(R.color.gray_5));
         //colorear segun el status del pedido
         //holder.imagen.setBorderColor(mContext.getResources().getColor(R.color.azulDupree));
         //Log.e(TAG,"Catidad: "+String.valueOf(listFilter.get(position).getCantidad())+", CantServer: "+listFilter.get(position).getCantidadServer());

@@ -51,7 +51,7 @@ public class MH_Adapter_pedidos_digitados extends RecyclerView.Adapter<MH_Adapte
         Log.i("@@@",holder.tvCedula.getText().toString());
         holder.tvObserv.setText("".concat(listFilter.get(position).getActi_usua()));
 
-        holder.cardViewBackGround.setCardBackgroundColor(position%2!=0 ? mContext.getResources().getColor(R.color.transp_Accent) : mContext.getResources().getColor(R.color.transp_azulDupree));
+        holder.cardViewBackGround.setCardBackgroundColor(position%2!=0 ? mContext.getResources().getColor(R.color.new_coolGrey7) : mContext.getResources().getColor(R.color.new_amarillo_114C));
 
     }
 

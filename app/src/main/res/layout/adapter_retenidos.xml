@@ -59,18 +59,19 @@
 
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
+
                                 <TextView
                                     android:id="@+id/tvNameRet"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:textStyle="bold"
-                                    android:textSize="15sp"
-                                    android:maxLines="1"
-                                    android:textColor="@color/azulDupree"
-                                    android:textAllCaps="true"
-
                                     android:gravity="center_horizontal"
-                                    android:text="VILLALOBOS MUÑOS PAOLA ANDREA"/>
+                                    android:maxLines="1"
+                                    android:text="VILLALOBOS MUÑOS PAOLA ANDREA"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/new_blackc"
+
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
                             </LinearLayout>
 
 
@@ -220,14 +221,14 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
                                 android:gravity="start"
-                                android:textStyle="normal"
+                                android:text="NÚMERO PEDIDOS: "
+                                android:textColor="@color/new_blackc"
                                 android:textSize="14sp"
-                                android:textColor="@color/azulDupree"
-                                android:text="NÚMERO PEDIDOS: "/>
+                                android:textStyle="normal|bold" />
 
                             <TextView
                                 android:id="@+id/tvNumPedidosRet"
@@ -262,15 +263,16 @@
                             android:layout_margin="5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <TextView
-                                android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
                                 android:gravity="start"
-                                android:textStyle="normal"
+                                android:text="NETO:"
+                                android:textColor="@color/new_blackc"
                                 android:textSize="13sp"
-                                android:textColor="@color/azulDupree"
-                                android:text="NETO:"/>
+                                android:textStyle="normal|bold" />
 
                             <TextView
                                 android:id="@+id/tvNetoRet"
@@ -303,15 +305,16 @@
                             android:layout_margin="5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <TextView
-                                android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
                                 android:gravity="start"
-                                android:textStyle="normal"
+                                android:text="SALDO:"
+                                android:textColor="@color/new_blackc"
                                 android:textSize="13sp"
-                                android:textColor="@color/azulDupree"
-                                android:text="SALDO:"/>
+                                android:textStyle="normal|bold" />
                             <TextView
                                 android:id="@+id/tvSaldoRet"
                                 android:layout_weight="0.5"
@@ -343,15 +346,16 @@
                             android:layout_margin="5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <TextView
-                                android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
                                 android:gravity="start"
-                                android:textStyle="normal"
+                                android:text="CUPO:"
+                                android:textColor="@color/new_blackc"
                                 android:textSize="13sp"
-                                android:textColor="@color/azulDupree"
-                                android:text="CUPO:"/>
+                                android:textStyle="normal|bold" />
                             <TextView
                                 android:id="@+id/tvCupoRet"
                                 android:layout_weight="0.5"
@@ -383,15 +387,16 @@
                             android:layout_margin="5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <TextView
-                                android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
                                 android:gravity="start"
-                                android:textStyle="normal"
+                                android:text="CARTERA:"
+                                android:textColor="@color/new_blackc"
                                 android:textSize="13sp"
-                                android:textColor="@color/azulDupree"
-                                android:text="CARTERA:"/>
+                                android:textStyle="normal|bold" />
                             <TextView
                                 android:id="@+id/tvCarteraRet"
                                 android:layout_weight="0.5"
@@ -423,15 +428,16 @@
                             android:layout_margin="5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <TextView
-                                android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
                                 android:gravity="start"
-                                android:textStyle="normal"
+                                android:text="CUPO:"
+                                android:textColor="@color/new_blackc"
                                 android:textSize="13sp"
-                                android:textColor="@color/azulDupree"
-                                android:text="CUPO:"/>
+                                android:textStyle="normal|bold" />
 
                             <TextView
                                 android:id="@+id/tvRCupoRet"
@@ -464,15 +470,16 @@
                             android:layout_margin="5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <TextView
-                                android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
                                 android:gravity="start"
-                                android:textStyle="normal"
+                                android:text="CODE:"
+                                android:textColor="@color/new_blackc"
                                 android:textSize="13sp"
-                                android:textColor="@color/azulDupree"
-                                android:text="CODE:"/>
+                                android:textStyle="normal|bold" />
                             <TextView
                                 android:id="@+id/tvCodeRet"
                                 android:layout_weight="0.5"
@@ -504,15 +511,16 @@
                             android:layout_margin="5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <TextView
-                                android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
                                 android:gravity="start"
-                                android:textStyle="normal"
+                                android:text="MONTO MÍNIMO:"
+                                android:textColor="@color/new_blackc"
                                 android:textSize="13sp"
-                                android:textColor="@color/azulDupree"
-                                android:text="MONTO MÍNIMO:"/>
+                                android:textStyle="normal|bold" />
                             <TextView
                                 android:id="@+id/tvMontoMinRet"
                                 android:layout_weight="0.5"
@@ -549,9 +557,9 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="start"
-                                android:textStyle="normal"
+                                android:textStyle="normal|bold"
                                 android:textSize="13sp"
-                                android:textColor="@color/azulDupree"
+                                android:textColor="@color/new_blackc"
                                 android:text="BLOQUEO:"/>
                             <TextView
                                 android:id="@+id/tvBloqueoRet"
@@ -589,9 +597,9 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="start"
-                                android:textStyle="normal"
+                                android:textStyle="normal|bold"
                                 android:textSize="14sp"
-                                android:textColor="@color/azulDupree"
+                                android:textColor="@color/new_blackc"
                                 android:text="MÍNIMO PÚBLICO:"/>
 
                             <TextView
@@ -630,9 +638,9 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="start"
-                                android:textStyle="normal"
+                                android:textStyle="normal|bold"
                                 android:textSize="14sp"
-                                android:textColor="@color/azulDupree"
+                                android:textColor="@color/new_blackc"
                                 android:text="TOTAL:"/>
                             <TextView
                                 android:id="@+id/tvTotalPublicoRet"

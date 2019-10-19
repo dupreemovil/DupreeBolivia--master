@@ -396,7 +396,7 @@ public class Pedidos_Hacer_Fragment extends Fragment {
 
         Drawable mDrawable2 = getResources().getDrawable(R.drawable.ic_shopping_cart_white_24dp);
         mDrawable2.setColorFilter(new
-                PorterDuffColorFilter(getResources().getColor(R.color.azulDupree), PorterDuff.Mode.MULTIPLY));
+                PorterDuffColorFilter(getResources().getColor(R.color.new_amarillo_114C), PorterDuff.Mode.MULTIPLY));
 
         tabOne.setCompoundDrawablesWithIntrinsicBounds(null, mDrawable2, null, null);
         tabs.getTabAt(0).setCustomView(tabOne);

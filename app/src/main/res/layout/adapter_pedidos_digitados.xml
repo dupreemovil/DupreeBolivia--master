@@ -55,11 +55,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:textStyle="bold"
-                            android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
+                            android:text="erys yajayra guerrero soto"
                             android:textAllCaps="true"
-                            android:text="erys yajayra guerrero soto"/>
+                            android:textColor="@color/new_blackc"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
@@ -87,14 +87,15 @@
                         android:layout_margin="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textStyle="normal"
+                            android:text="CI:"
+                            android:textColor="@color/new_blackc"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
-                            android:text="CI:"/>
+                            android:textStyle="normal" />
                         <TextView
                             android:id="@+id/tvCedula"
                             android:layout_width="match_parent"
@@ -122,14 +123,15 @@
                         android:layout_margin="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:textStyle="normal"
+                            android:text="OBS.: "
+                            android:textColor="@color/new_blackc"
                             android:textSize="14sp"
-                            android:textColor="@color/azulDupree"
-                            android:text="OBS.: "/>
+                            android:textStyle="normal" />
                         <TextView
                             android:id="@+id/tvObserv"
                             android:layout_width="match_parent"

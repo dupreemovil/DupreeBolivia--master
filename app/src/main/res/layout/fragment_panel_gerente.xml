@@ -34,12 +34,12 @@
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="0.3"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textColor="@color/azulDupree"
+                    android:layout_weight="0.3"
+                    android:text="@string/campana_title"
                     android:textAlignment="center"
-                    android:text="@string/campana_title"/>
+                    android:textColor="@color/new_blackc"
+                    android:textStyle="bold" />
                 <EditText
                     android:id="@+id/txtSpnCamp"
                     android:focusableInTouchMode="false"
