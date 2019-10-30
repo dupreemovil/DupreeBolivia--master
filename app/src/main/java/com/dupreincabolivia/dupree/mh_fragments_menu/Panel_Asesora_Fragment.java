@@ -267,7 +267,7 @@ public class Panel_Asesora_Fragment extends Fragment {
 
         Drawable mDrawable1 = getResources().getDrawable(R.drawable.ic_track_changes_white_24dp);
         mDrawable1.setColorFilter(new
-                PorterDuffColorFilter(getResources().getColor(R.color.azulDupree), PorterDuff.Mode.MULTIPLY));
+                PorterDuffColorFilter(getResources().getColor(R.color.new_amarillo_114C), PorterDuff.Mode.MULTIPLY));
 
         tab1.setCompoundDrawablesWithIntrinsicBounds(null, mDrawable1, null, null);
         tabsPanelAsesora.getTabAt(0).setCustomView(tab1);
@@ -278,7 +278,7 @@ public class Panel_Asesora_Fragment extends Fragment {
 
         Drawable mDrawable2 = getResources().getDrawable(R.drawable.ic_info_outline_white_24dp);
         mDrawable2.setColorFilter(new
-                PorterDuffColorFilter(getResources().getColor(R.color.azulDupree), PorterDuff.Mode.MULTIPLY));
+                PorterDuffColorFilter(getResources().getColor(R.color.new_amarillo_114C), PorterDuff.Mode.MULTIPLY));
 
         tab2.setCompoundDrawablesWithIntrinsicBounds(null, mDrawable2, null, null);
         tabsPanelAsesora.getTabAt(1).setCustomView(tab2);

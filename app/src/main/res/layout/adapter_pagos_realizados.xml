@@ -50,7 +50,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/imgB_Factura"
 
-                            android:tint="@color/azulDupree"
+                            android:tint="@color/new_amarillo_114C"
                             android:background="@color/transparent"
                             android:src="@drawable/ic_account_balance_white_24dp"/>
 

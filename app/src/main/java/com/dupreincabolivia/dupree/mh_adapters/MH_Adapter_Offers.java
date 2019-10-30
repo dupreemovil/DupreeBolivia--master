@@ -129,11 +129,11 @@ public class MH_Adapter_Offers extends RecyclerView.Adapter<MH_Adapter_Offers.Vi
                 //holder.imagen.setImageResource(R.drawable.ic_flor180x180);//no hay cambios
 
                 holder.tvStatus.setText("");
-                holder.tvStatus.setTextColor(mContext.getResources().getColor(R.color.azulDupree));
+                holder.tvStatus.setTextColor(mContext.getResources().getColor(R.color.new_amarillo_114C));
             }else{// si esta en el server pero no hay cambios
                 //holder.imagen.setImageResource(R.drawable.ic_flor180x180);//no hay cambior
                 holder.tvStatus.setText("");
-                holder.tvStatus.setTextColor(mContext.getResources().getColor(R.color.azulDupree));
+                holder.tvStatus.setTextColor(mContext.getResources().getColor(R.color.new_amarillo_114C));
             }
             //holder.tvStatus.setTextColor(mContext.getResources().getColor(R.color.red_1));
             removeEditable(listFilter.get(position).getId());

@@ -406,7 +406,7 @@ public class Pedidos_Hacer_Fragment extends Fragment {
 
         Drawable mDrawable1 = getResources().getDrawable(R.drawable.ic_list_white_24dp);
         mDrawable1.setColorFilter(new
-                PorterDuffColorFilter(getResources().getColor(R.color.azulDupree), PorterDuff.Mode.MULTIPLY));
+                PorterDuffColorFilter(getResources().getColor(R.color.new_amarillo_114C), PorterDuff.Mode.MULTIPLY));
 
         tabTwo.setCompoundDrawablesWithIntrinsicBounds(null, mDrawable1, null, null);
         tabs.getTabAt(1).setCustomView(tabTwo);
@@ -808,7 +808,7 @@ public class Pedidos_Hacer_Fragment extends Fragment {
     }
 
     private void filterCatalogoDB(final String textFilter){
-        Log.v(TAG,"filterCatalogoDB... ---------------filterCatalogoDB--------------");
+        Log.v(TAG,"filterCatalogoDB... ---------------filterCatalogoDB--------------" +  textFilter );
         realm.beginTransaction();
         try {
             listFilter.clear();
