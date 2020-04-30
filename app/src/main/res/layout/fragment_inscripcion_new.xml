@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
 
     android:id="@+id/ctnInscription"
-    tools:context="com.dupreincabolivia.dupree.mh_fragments_menu.incorporaciones.InscripcionFragment">
+    tools:context="com.dupreeincabolnuevo.dupree.mh_fragments_menu.incorporaciones.InscripcionFragment">
 
     <ScrollView
         android:layout_width="match_parent"

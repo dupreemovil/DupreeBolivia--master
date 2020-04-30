@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.dupreincabolivia.dupree">
+    package="com.dupreeincabolnuevo.dupree">
     <!--    "com.dupree2.Dupre"-->
 
 
@@ -16,9 +16,7 @@
     <uses-permission android:name="android.permission.FLAG_GRANT_WRITE_URI_PERMISSION" />
     <uses-permission android:name="android.permission.FLAG_GRANT_READ_URI_PERMISSION" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <uses-feature android:name="android.hardware.camera.autofocus"/>
 
@@ -33,19 +31,19 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name="com.dupreincabolivia.dupree.mh_based_realm.BaseApplication">
+        android:name="com.dupreeincabolnuevo.dupree.mh_based_realm.BaseApplication">
 
 
         <!--FIREBASE-->
         <service
-            android:name="com.dupreincabolivia.dupree.mh_firebase.MyFirebaseMessagingService">
+            android:name="com.dupreeincabolnuevo.dupree.mh_firebase.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
 
         <service
-            android:name="com.dupreincabolivia.dupree.mh_firebase.MyFirebaseInstanceIDService">
+            android:name="com.dupreeincabolnuevo.dupree.mh_firebase.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
@@ -76,18 +74,18 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait"
 
-            android:name="com.dupreincabolivia.dupree.MainActivity"
-            android:label="@string/app_name"
+            android:name="com.dupreeincabolnuevo.dupree.MainActivity"
+            android:label="Azzorti Bolivia"
             android:theme="@style/AppTheme"/>
         <activity
             android:configChanges="orientation"
             android:screenOrientation="portrait"
 
-            android:name="com.dupreincabolivia.dupree.MenuActivity"
+            android:name="com.dupreeincabolnuevo.dupree.MenuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme"/>
 
-        <activity android:name="com.dupreincabolivia.dupree.ImageZoomActivity" />
+        <activity android:name="com.dupreeincabolnuevo.dupree.ImageZoomActivity" />
 
         <activity
             android:name=".mh_utilities.ImageZoomActivity_Scroll"
@@ -98,10 +96,10 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait"
 
-            android:name="com.dupreincabolivia.dupree.CatalogoViewerActivity" />
+            android:name="com.dupreeincabolnuevo.dupree.CatalogoViewerActivity" />
 
         <activity
-            android:name="com.dupreincabolivia.dupree.FullscreenActivity"
+            android:name="com.dupreeincabolnuevo.dupree.FullscreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/FullscreenTheme">
@@ -111,7 +109,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.dupreincabolivia.dupree.PDFActivity">
+        <activity android:name="com.dupreeincabolnuevo.dupree.PDFActivity">
 
 
         </activity>
